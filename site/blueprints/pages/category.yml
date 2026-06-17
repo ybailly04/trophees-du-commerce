@@ -1,0 +1,21 @@
+title: Catégorie
+icon: 📂
+
+fields:
+  icon:
+    type: text
+    label: Icône (emoji)
+    width: 1/4
+  description:
+    type: textarea
+    label: Description
+    width: 3/4
+
+sections:
+  establishments:
+    type: pages
+    label: Établissements
+    templates:
+      - establishment
+    layout: list
+    info: "{{ page.votes }} votes"

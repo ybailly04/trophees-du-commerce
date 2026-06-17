@@ -1,0 +1,17 @@
+Title: La Belle Table
+
+----
+
+Address: 34 avenue Victor Hugo, Lyon
+
+----
+
+Description: Gastronomie raffinée avec des produits locaux de saison.
+
+----
+
+Votes: 0
+
+----
+
+Uuid: estab0002labelletable

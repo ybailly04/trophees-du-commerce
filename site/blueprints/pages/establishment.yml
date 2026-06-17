@@ -1,0 +1,14 @@
+title: Établissement
+icon: 📍
+
+fields:
+  address:
+    type: text
+    label: Adresse
+  description:
+    type: textarea
+    label: Description
+  votes:
+    type: number
+    label: Votes
+    default: 0

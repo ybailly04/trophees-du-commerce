@@ -1,0 +1,17 @@
+Title: Mode & Style
+
+----
+
+Address: 8 place Bellecour, Lyon
+
+----
+
+Description: Vêtements et accessoires de créateurs locaux.
+
+----
+
+Votes: 0
+
+----
+
+Uuid: estab0003modeetstyle

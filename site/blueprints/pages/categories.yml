@@ -1,0 +1,12 @@
+title: Catégories de vote
+icon: 🏆
+
+sections:
+  categories:
+    type: pages
+    label: Catégories
+    templates:
+      - category
+    layout: cards
+    image:
+      icon: folder

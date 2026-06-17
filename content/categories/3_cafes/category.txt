@@ -1,0 +1,13 @@
+Title: Cafés
+
+----
+
+Icon: ☕
+
+----
+
+Description: Les meilleures adresses pour une pause café.
+
+----
+
+Uuid: category0003cafes

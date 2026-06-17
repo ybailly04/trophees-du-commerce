@@ -1,0 +1,13 @@
+Title: Boutiques
+
+----
+
+Icon: 🛍️
+
+----
+
+Description: Les commerces incontournables pour faire du shopping.
+
+----
+
+Uuid: category0002boutiques

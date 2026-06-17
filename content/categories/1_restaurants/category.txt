@@ -1,0 +1,13 @@
+Title: Restaurants
+
+----
+
+Icon: 🍽️
+
+----
+
+Description: Les meilleures tables de la ville.
+
+----
+
+Uuid: category0001restaurants

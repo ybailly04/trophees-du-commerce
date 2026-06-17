@@ -1,0 +1,17 @@
+Title: Le Petit Bistro
+
+----
+
+Address: 12 rue de la Paix, Lyon
+
+----
+
+Description: Une cuisine traditionnelle française dans une ambiance chaleureuse.
+
+----
+
+Votes: 0
+
+----
+
+Uuid: estab0001lepetitbistro

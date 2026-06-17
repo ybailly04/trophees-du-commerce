@@ -1,0 +1,17 @@
+Title: Le Grand Café
+
+----
+
+Address: 5 rue de la République, Lyon
+
+----
+
+Description: Café historique avec une terrasse ensoleillée et des pâtisseries maison.
+
+----
+
+Votes: 0
+
+----
+
+Uuid: estab0004legrandcafe
