@@ -1,0 +1,16 @@
+title: Authentification
+icon: 🔐
+
+fields:
+  alert:
+    label: Alert text
+    type: text
+  username:
+    label: Label for username
+    type: text
+  password:
+    label: Label for password
+    type: text
+  button:
+    label: Button text
+    type: text

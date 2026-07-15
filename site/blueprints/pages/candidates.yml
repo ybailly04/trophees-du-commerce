@@ -1,0 +1,9 @@
+options:
+  changeTemplate: false
+
+sections:
+  categories:
+    type: pages
+    template: candidate
+    label: Touts les candidats
+    create: candidate

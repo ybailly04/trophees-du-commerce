@@ -1,0 +1,17 @@
+Title: Accueil
+
+----
+
+Flexibles: [{"content":{"text":""},"id":"6cf8d472-cbae-4f54-9c5e-5b0e8f39f3be","isHidden":false,"type":"text"}]
+
+----
+
+Text: Du texte
+
+----
+
+Uuid: vpmettal6yd201gc
+
+----
+
+Lock: etJQQ9vF

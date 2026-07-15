@@ -1,0 +1,184 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.footer {
+    padding: 3rem 0;
+    color: $beige;
+    @include sitegrid;
+    @include container;
+    @include background($black);
+    gap: 4em 1em;
+    @media #{$sm} {
+        gap: 2em 1em;
+    }
+
+    &-socials {
+        @include gridspan(1, 2);
+        display: flex;
+        align-items: center;
+
+        &-link {
+            color: currentColor;
+            text-decoration: none;
+            width: 5em;
+            height: 5em;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba($beige, 0.3);
+            border-radius: 50%;
+            align-self: flex-start;
+            transition: background $ts-smooth;
+            &:hover {
+                background-color: $beige;
+
+                svg {
+                    fill: black;
+                }
+            }
+            svg {
+                width: 2em;
+                height: 2em;
+                fill: currentColor;
+                transition: fill $ts-smooth;
+            }
+
+            & + * {
+                margin-left: -0.5em;
+            }
+        }
+    }
+
+    &-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em 0;
+        @include gridspan(4, 4);
+
+        &-mail {
+            color: currentColor;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            line-height: 1;
+            @include underline_alt;
+        }
+        &-tel {
+            color: currentColor;
+            font-size: 2.2em;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            @include underline_alt;
+        }
+    }
+
+    &-showroom {
+        @include gridspan(10, 3);
+
+        &-title {
+            text-transform: uppercase;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            font-size: 1.4em;
+            margin: 0 0 1em 0;
+        }
+
+        &-adress {
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+    }
+    &-credit {
+        @include gridspan(1, 2);
+        text-transform: uppercase;
+        font-family: $font-secondary;
+        letter-spacing: -0.025em;
+    }
+
+    &-bim {
+        @include gridspan(11, 2);
+        text-transform: uppercase;
+        color: $gray;
+        justify-self: flex-end;
+        font-size: 0.8em;
+        a {
+            color: $beige;
+            text-decoration: none;
+        }
+    }
+
+    &-menu {
+        @include gridspan(5, 4);
+        .menu {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            gap: 1em;
+
+            &-item {
+                margin: 0;
+
+                > a {
+                    text-transform: uppercase;
+                    color: currentColor;
+                    font-size: 0.8em;
+                    @include underline_alt;
+                }
+            }
+        }
+
+        .submenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            &-item-link {
+                position: relative;
+                padding-left: 1.5rem;
+                color: $gray-light;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0.25rem;
+                    top: 0.6rem;
+                    height: 1px;
+                    width: 0.75rem;
+                    background: $gray-dark;
+                    transition: $ts;
+                }
+
+                &:hover {
+                    &:before {
+                        transform: scaleY(5);
+                        background: $color-main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subfooter {
+    background: var(--bg-dark);
+    color: var(--color-dark);
+    padding: 1em 0;
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7em;
+
+        a {
+            color: currentColor;
+            margin: 0 5px;
+
+            &:hover {
+                color: #ff88bb;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+options:
+  changeTemplate: false
+
+sections:
+  categories:
+    type: pages
+    template: category
+    label: Toutes les catégories
+    create: category

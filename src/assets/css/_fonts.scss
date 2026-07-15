@@ -1,0 +1,226 @@
+// ==========================================
+// PP Neue Machina - Inktrap
+// ==========================================
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapThin.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapThin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapThinItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapLight.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapLight.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapLightItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapLightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapRegular.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapRegular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapRegularItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapRegularItalic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapMedium.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapMediumItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapMediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapUltrabold.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapUltrabold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Inktrap";
+    src:
+        url("../fonts/PPNeueMachina-InktrapUltraboldItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-InktrapUltraboldItalic.woff") format("woff");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+// ==========================================
+// PP Neue Machina - Plain
+// ==========================================
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainThin.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainThin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainThinItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainThinItalic.woff") format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainLight.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainLight.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainLightItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainLightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainRegular.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainRegular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainRegularItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainRegularItalic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainMedium.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainMediumItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainMediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainUltrabold.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainUltrabold.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PP Neue Machina Plain";
+    src:
+        url("../fonts/PPNeueMachina-PlainUltraboldItalic.woff2") format("woff2"),
+        url("../fonts/PPNeueMachina-PlainUltraboldItalic.woff") format("woff");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+// ==========================================
+// Space Grotesk
+// ==========================================
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/space-grotesk-v22-latin-300.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/space-grotesk-v22-latin-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/space-grotesk-v22-latin-500.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/space-grotesk-v22-latin-600.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../fonts/space-grotesk-v22-latin-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

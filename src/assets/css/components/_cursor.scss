@@ -1,0 +1,58 @@
+$mf-color-base:#000 !default;
+$mf-color-text:#fff !default;
+
+.mf-cursor {
+
+    &:before {
+        
+    }
+
+    &.-pointer {
+        &:before {
+            transform:scale(0.15);
+        }
+    }
+
+    &.-text {
+        &:before {
+            opacity:0.85;
+            transform:scale(1.7);
+        }
+
+        &.-active:before {
+            transform:scale(1.6);
+            transition-duration:0.2s;
+        }
+    }
+
+    &.-icon {
+        &:before {
+            transform:scale(1.5);
+        }
+
+        &.-active:before {
+            transform:scale(1.4);
+        }
+    }
+
+    &.-hidden {
+        &:before {
+            transform:scale(0);
+        }
+    }
+
+    &-text {
+
+    }
+
+    &-media {
+
+        img, video {
+        
+        }
+
+        &-box {
+            
+        }
+    }
+}

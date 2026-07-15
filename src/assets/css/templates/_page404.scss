@@ -1,0 +1,30 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.page404{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-title{
+        font-size: 1rem;
+        color: currentColor;
+        text-align: center;
+        margin: 1rem 0 4rem 0;
+    }
+
+    &-number{
+        font-size: 10rem;
+        line-height: 1;
+        @media #{$sm} {
+            font-size: 5rem;
+        }
+    }
+}

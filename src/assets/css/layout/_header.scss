@@ -1,0 +1,57 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.header {
+    background-color: transparent;
+    color: var(--color-dark);
+    padding: 1.5rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+
+    &-wrapper {
+        @include container();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        display: block;
+
+        img {
+            width: auto;
+            height: 3.5rem;
+        }
+    }
+
+    &-button {
+        
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1em;
+    }
+
+    &-contact {
+       
+    }
+
+    //MENU HEADER
+    &-menu {
+        //NIVEAU 1
+        > ul {
+            > li {
+                > a {
+                    
+                    @include underline_alt;
+                }
+            }
+        }
+    }
+}

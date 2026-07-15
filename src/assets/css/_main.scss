@@ -1,0 +1,114 @@
+@use "_mixins" as *;
+@use "_variables" as *;
+
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    backface-visibility: hidden;
+}
+
+:root {
+    --size-unit: 16; /* body font-size in design - no px */
+    --size-container-ideal: 1600; /* screen-size in design - no px */
+    --size-container-min: 992px;
+    --size-container-max: 2400px;
+    --size-container: clamp(var(--size-container-min), 100vw, var(--size-container-max));
+    --size-font: calc(var(--size-container) / (var(--size-container-ideal) / var(--size-unit)));
+    --grid-gap: 20px;
+
+    /* COLORS */
+    --bg: #{$beige};
+    --color: #{$black};
+    --bg-dark: #{$black};
+    --color-dark: #{$white};
+}
+@media #{$md} {
+    :root {
+        --size-container-ideal: 834; /* screen-size in design - no px */
+        --size-container-min: 768px;
+        --size-container-max: 991px;
+    }
+}
+@media #{$sm} {
+    :root {
+        --size-container-ideal: 500; /* screen-size in design - no px */
+        --size-container-min: 400px;
+        --size-container-max: 750px;
+    }
+}
+
+[data-theme="dark"] {
+    --bg: #{$black};
+    --color: #{$white};
+    --bg-dark: #{$white};
+    --color-dark: #{$black};
+}
+
+svg {
+    fill: currentColor;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    font-family: $font;
+    font-weight: $fw-regular;
+    color: $black;
+    font-size: var(--size-font);
+    background: var(--bg);
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-secondary;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 8em;
+}
+h2 {
+    font-size: 5em;
+}
+h3 {
+    font-size: 2.5em;
+}
+h4 {
+    font-size: 1.75em;
+}
+h5 {
+    font-size: 1.25em;
+}
+
+.main-content {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: $container-width;
+    width: 100%;
+    padding: 0 rm(1);
+    margin: 0 auto;
+
+    @media #{$sm} {
+        padding: 0 1rem;
+    }
+
+    &-little {
+        @extend .container;
+        max-width: 780px;
+    }
+}

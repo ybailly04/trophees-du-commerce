@@ -1,0 +1,35 @@
+// @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;600;800&display=swap');
+
+@use "../../../node_modules/swiper/swiper.min.css";
+@use "../../../node_modules/swiper/modules/effect-fade.css";
+@use "../../../node_modules/mouse-follower/src/scss/index.scss";
+
+@use "main";
+@use "fonts";
+
+@use "layout/header";
+@use "layout/prefooter";
+@use "layout/footer";
+@use "layout/menu";
+
+@use "components/buttons";
+@use "components/cursor";
+@use "components/popup";
+@use "components/sticky-features";
+@use "components/forms";
+@use "components/whatsapp";
+
+@use "templates/homepage";
+@use "templates/page";
+@use "templates/page404";
+@use "templates/about";
+@use "templates/contact";
+@use "templates/legal";
+
+@use "flexibles/flex-paragraphe";
+@use "flexibles/flex-objets";
+@use "flexibles/flex-showroom";
+@use "flexibles/flex-images";
+@use "flexibles/flex-process";
+@use "flexibles/flex-video";
+@use "flexibles/flex-texteimage";

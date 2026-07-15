@@ -1,0 +1,7 @@
+options:
+  changeTemplate: false
+
+fields:
+  confirmation:
+    type: textarea
+    label: Message de confirmation

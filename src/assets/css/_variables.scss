@@ -1,0 +1,54 @@
+// ==========================================
+// Fonts
+// ==========================================
+$font-default:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font: "Space Grotesk", $font-default;
+$font-secondary: "PP Neue Machina Inktrap", $font-default;
+$fw-regular: 300;
+
+// ==========================================
+// Colors
+// ==========================================
+$black: #1f1715;
+$gray-dark: #50555d;
+$gray: #62594c;
+$gray-light: #c9c9ce;
+$gray-lime: #f0f0f0;
+$white: #ffffff;
+$brown: #62594c;
+$maroon: #411f15;
+$beige: #dcdcd0;
+$color-main: #ffdd11;
+
+// ==========================================
+// Transitions
+// ==========================================
+$ts-short: 0.2s;
+$ts-medium: 0.35s;
+$ts-long: 0.7s;
+$ts-animation: 1.4s;
+$easing: ease;
+$easing-smooth: cubic-bezier(0.23, 1, 0.32, 1);
+$ts: all $ts-short $easing;
+$ts-smooth: 0.8s $easing-smooth;
+$ts-smooth-long: 1.4s $easing-smooth;
+
+// ==========================================
+// Media
+// ==========================================
+$container-width: var(--size-container);
+$container-medium: calc(var(--size-container) * 0.85);
+$container-small: calc(var(--size-container) * 0.7);
+$xxs: "screen and (max-width: 442px)";
+$xxs-min: "screen and (min-width: 443px)";
+$xs: "screen and (max-width: 572px)";
+$xs-min: "screen and (min-width: 573px)";
+$sm: "screen and (max-width: 765px)";
+$sm-min: "screen and (min-width: 766px)";
+$md: "screen and (max-width: 992px)";
+$md-min: "screen and (min-width: 993px)";
+$lg: "screen and (max-width: 1280px)";
+$lg-min: "screen and (min-width: 1281px)";
+$xlg: "screen and (max-width: 1920px)";
+$xlg-min: "screen and (min-width: 1920px)";

@@ -1,0 +1,10 @@
+title: Catégorie
+
+options:
+  changeTemplate: false
+  changeSlug: true
+
+fields:
+  description:
+    type: textarea
+    label: Description

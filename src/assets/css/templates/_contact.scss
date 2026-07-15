@@ -1,0 +1,86 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.contact {
+    @include container;
+    @include sitegrid;
+    padding-top: 18em;
+    padding-bottom: 6em;
+    position: relative;
+    overflow: hidden;
+
+    &-left {
+        @include gridspan(1, 3);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2em;
+
+        @media #{$md} {
+            grid-row: 2;
+        }
+
+        &-seo {
+            @include wysiwyg;
+            color: $gray;
+        }
+
+        &-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            a {
+                font-size: 1.5em;
+                & + * {
+                    margin-top: 0.5em;
+                }
+            }
+        }
+    }
+
+    &-right {
+        @include gridspan(5, 8);
+
+        &-title {
+            display: flex;
+            flex-direction: column;
+            color: $gray;
+            font-size: 6em;
+            margin-top: 0;
+            line-height: 1;
+            @media #{$md} {
+                font-size: 3em;
+            }
+            span {
+                text-transform: uppercase;
+
+                &:first-of-type {
+                }
+                &:nth-of-type(3n + 2) {
+                    text-align: center;
+                }
+                &:last-of-type {
+                    margin-left: 1em;
+                }
+            }
+        }
+
+        &-deco {
+            position: absolute;
+            top: 8em;
+            left: 0;
+            transform: translateX(-50%);
+            fill: none;
+            stroke: $gray;
+            height: 50%;
+            aspect-ratio: 1/1;
+            z-index: -1;
+            opacity: 0.5;
+            @media #{$md} {
+                display: none;
+            }
+        }
+    }
+}

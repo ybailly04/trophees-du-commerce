@@ -1,0 +1,4 @@
+title: Entreprise
+permissions:
+  access:
+    panel: false

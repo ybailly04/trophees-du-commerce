@@ -1,0 +1,381 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.homepage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    background-color: $beige;
+
+    &-hero {
+        height: 100lvh;
+        width: 100%;
+        position: relative;
+        color: $white;
+        padding-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+
+        &-title {
+            color: $white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            z-index: 2;
+            @media #{$lg} {
+                font-size: 6em;
+            }
+            @media #{$sm} {
+                font-size: 4em;
+            }
+        }
+        &-button {
+            position: absolute;
+            top: calc(50% + 6em);
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 2;
+        }
+        &-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(80%);
+        }
+        &-bottom {
+            @include container;
+            @include sitegrid();
+            width: 100%;
+            z-index: 2;
+            &-left {
+                @include gridspan(1, 5);
+                font-family: $font-secondary;
+                letter-spacing: -0.025em;
+                font-size: 2em;
+                letter-spacing: -0.025em;
+                @media #{$lg} {
+                    font-size: 1.5em;
+                }
+            }
+            &-right {
+                @include gridspan(11, 2);
+                align-self: flex-end;
+                justify-self: flex-end;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            &-stars {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                svg {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+        }
+        &-deco {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            fill: none;
+            stroke: $white;
+            opacity: 0.25;
+        }
+    }
+
+    &-intro {
+        @include container;
+        @include sitegrid;
+        @include blockspacing;
+        &-title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-family: $font;
+            display: inline-flex;
+            margin: 0 2rem 0 0;
+            font-weight: 500;
+        }
+        &-text {
+            @include gridspan(1, 9);
+            font-family: $font-secondary;
+            font-size: 2em;
+            letter-spacing: -0.025em;
+
+            p {
+                display: inline;
+            }
+        }
+
+        &-deco {
+            @include gridspan(6, 2);
+            display: grid;
+            place-items: center;
+            position: relative;
+
+            &-coin {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                height: calc(100% - 1.5rem);
+            }
+
+            &-svg {
+                height: 100%;
+                width: auto;
+                fill: none;
+                opacity: 0.25;
+                stroke: $gray;
+            }
+        }
+    }
+
+    &-transition {
+        @include container;
+        @include sitegrid;
+        @include blockspacing;
+
+        &-title {
+            @include gridspan(3, 8);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -0.025em;
+            color: $gray;
+            font-size: 8em;
+            @media #{$lg} {
+                font-size: 6em;
+            }
+            @media #{$sm} {
+                font-size: 5em;
+            }
+        }
+        &-surtitle {
+            @include gridspan(6, 2);
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+        }
+        &-left {
+            @include gridspan(1, 2);
+            text-transform: uppercase;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            color: $gray;
+            grid-row: 2;
+            align-self: center;
+            @media #{$md} {
+                display: none;
+            }
+        }
+        &-right {
+            @include gridspan(11, 2);
+            text-align: right;
+            text-transform: uppercase;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            color: $gray;
+            grid-row: 2;
+            align-self: center;
+            @media #{$md} {
+                display: none;
+            }
+        }
+    }
+
+    &-steps {
+        --bgcolor: #{$gray};
+        @include container;
+        @include background(var(--bgcolor));
+        height: 200lvh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        color: $beige;
+    }
+
+    &-about {
+        @include sitegrid;
+        @include container;
+        @include blockspacing;
+        position: relative;
+
+        &-picture {
+            @include gridspan(1, 4);
+            width: 100%;
+            aspect-ratio: 4/5;
+            grid-row: 1 / span 2;
+            @media #{$md} {
+                grid-row: 1;
+            }
+
+            > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-right {
+            @include gridspan(6, 4);
+        }
+
+        &-button {
+            margin-top: 2em;
+        }
+
+        &-title {
+            @include gridspan(5, 8);
+            display: flex;
+            flex-direction: column;
+            text-transform: uppercase;
+            color: $gray;
+            font-size: 10em;
+            margin: 0.5em 0 0 0;
+            line-height: 1;
+
+            @media #{$md} {
+                font-size: 5em;
+                grid-row: 2;
+            }
+
+            span {
+                &:nth-of-type(3n + 1) {
+                    @media #{$md-min} {
+                        text-align: right;
+                    }
+                }
+                &:nth-of-type(3n + 3) {
+                    @media #{$md-min} {
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+
+        &-coin {
+            position: absolute;
+            bottom: 4em;
+            right: 10em;
+            width: 6em;
+            height: 6em;
+            @media #{$md} {
+                display: none;
+            }
+        }
+    }
+
+    &-process {
+        @include blockspacing;
+        @include container;
+
+        &-title {
+            text-align: center;
+            text-transform: uppercase;
+            color: $gray;
+            font-size: 8em;
+            max-width: 70%;
+            margin: 0 auto;
+            line-height: 1;
+            overflow: hidden;
+            @media #{$md} {
+                font-size: 5em;
+                text-align: left;
+                max-width: 100%;
+            }
+        }
+        &-wrapper {
+            @include sitegrid;
+        }
+
+        &-list {
+            @include gridspan(5, 7);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        &-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1em 4em;
+            padding: 3em 0 4em;
+            &:not(:last-of-type) {
+                border-bottom: 1px solid rgba($black, 0.2);
+            }
+            @media #{$md} {
+                flex-direction: column;
+            }
+
+            &-title {
+                margin: 0;
+                width: 30%;
+                flex-shrink: 0;
+                color: $gray;
+                text-transform: uppercase;
+                line-height: 1;
+                @media #{$md} {
+                    width: 100%;
+                }
+            }
+            &-description {
+                font-size: 1.1em;
+                p:first-of-type {
+                    margin-top: 0;
+                }
+            }
+        }
+        &-numbers {
+            @include gridspan(1, 4);
+            font-size: 8em;
+            font-family: $font-secondary;
+            letter-spacing: -0.025em;
+            position: relative;
+            color: $white;
+            height: 100%;
+            justify-self: center;
+            @media #{$md} {
+                display: none;
+            }
+
+            &-wrapper {
+                position: sticky;
+                top: 3em;
+                display: flex;
+                align-items: flex-end;
+                height: 1lh;
+                line-height: 1;
+                overflow: hidden;
+
+                span {
+                    line-height: 1;
+                }
+            }
+
+            &-scroll {
+                display: flex;
+                flex-direction: column;
+                line-height: 1;
+                transform: translateY(calc(100% - 1lh));
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "assets/css/style.scss": {
+    "file": "assets/style-C4_H4F1L.css",
+    "src": "assets/css/style.scss",
+    "isEntry": true,
+    "name": "style",
+    "names": [
+      "style.css"
+    ]
+  },
+  "assets/js/app.js": {
+    "file": "assets/app-DK5qNquZ.js",
+    "name": "app",
+    "src": "assets/js/app.js",
+    "isEntry": true
+  }
+}

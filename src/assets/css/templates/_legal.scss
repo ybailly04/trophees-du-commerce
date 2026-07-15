@@ -1,0 +1,8 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.legal {
+    @include container;
+    padding-top: 8em;
+    padding-bottom: 6em;
+}

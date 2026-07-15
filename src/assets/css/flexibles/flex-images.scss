@@ -1,0 +1,42 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.flex-images {
+    @include container;
+    @include sitegrid;
+    @include blockspacing;
+
+    &-gauche {
+        @include gridspan(1, 6);
+        width: 100%;
+        aspect-ratio: 15/16;
+
+        &.solo {
+            @include gridspan(1, 12);
+            aspect-ratio: 16/9;
+        }
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-droite {
+        @include gridspan(7, 6);
+        width: 100%;
+        aspect-ratio: 15/16;
+
+        &.solo {
+            @include gridspan(1, 12);
+            aspect-ratio: 16/9;
+        }
+
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

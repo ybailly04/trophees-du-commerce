@@ -1,0 +1,149 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.gform_fields {
+    --gf-form-gap-y: 1em;
+}
+
+.gform_wrapper {
+    font-family: $font;
+
+    .gfield_html {
+        color: $black;
+    }
+
+    .gfield--type-choice {
+        .gfield_label {
+            margin: 0 0 0.75em 0 !important;
+            font-size: 1.4em !important;
+            text-transform: uppercase;
+        }
+    }
+
+    .gfield_checkbox,
+    .gfield_radio {
+        display: flex;
+        flex-direction: row !important;
+
+        .gchoice {
+            font-size: 1.2em;
+            border: 1px solid $gray;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition:
+                border $ts-short,
+                background $ts-smooth;
+            text-align: center;
+            &:hover {
+                border-color: var(--color);
+            }
+            &:has(input:checked) {
+                background-color: var(--color);
+
+                label {
+                    color: var(--color-dark) !important;
+                }
+            }
+        }
+
+        .gform-field-label {
+            color: var(--color) !important;
+            margin: 0;
+            font-size: 0.9em;
+            padding: 1.5em 2em;
+            transition: color $ts-short;
+            text-align: center;
+            width: 100%;
+        }
+
+        .gfield-choice-input {
+            position: absolute;
+            left: -999px;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        background-color: transparent !important;
+        border-color: rgba($black, 0.15) !important;
+        color: $black !important;
+        padding: 2em !important;
+        border-radius: 0px !important;
+        box-shadow: none !important;
+        outline-color: $beige !important;
+        border-top: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+
+        &::placeholder {
+            color: rgba($black, 0.3);
+        }
+    }
+
+    .ginput_container_consent {
+        label {
+            color: $gray !important;
+        }
+        input {
+            accent-color: $white;
+            appearance: none;
+            background-color: transparent !important;
+            border-radius: 50% !important;
+            outline-color: $gray-dark !important;
+
+            &:focus {
+                outline: none;
+                border-color: 1px solid $gray !important;
+            }
+            &:checked {
+                background-color: $gray !important;
+            }
+            &::before {
+                border-radius: 50%;
+                color: $black !important;
+            }
+        }
+    }
+
+    input[type="submit"],
+    .gform_next_button,
+    .gform_previous_button {
+        background-color: $maroon !important;
+        color: $white !important;
+        border-radius: 0px !important;
+        padding: 1em 1.5em !important;
+        min-width: 12em !important;
+        text-transform: uppercase !important;
+        outline-color: $beige !important;
+        border-color: none !important;
+        &:hover,
+        &:focus {
+            background-color: $black !important;
+            color: $white !important;
+        }
+    }
+
+    .gfield_required {
+        color: $maroon !important;
+    }
+    .gform_required_legend {
+        display: none;
+    }
+
+    .gform_footer {
+        margin: 2em 0 0 0 !important;
+    }
+
+    .gform_drop_area {
+        background-color: transparent !important;
+        &::before {
+            color: $gray !important;
+        }
+    }
+    .gform_button_select_files {
+        background-color: $maroon !important;
+    }
+}

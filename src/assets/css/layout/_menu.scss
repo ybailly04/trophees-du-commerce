@@ -1,0 +1,44 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	&-item {
+		& + *{
+			margin: 0 0 0 1em;
+		}
+
+		&-link {
+			text-decoration: none;
+			display: block;
+
+			svg {
+				display: block;
+			}
+		}
+	}
+}
+
+.__menu-active {
+	overflow: hidden;
+
+	.menu-header {
+		transform: translateX(0);
+
+		.menu {
+			opacity: 1;
+			transition-delay: $ts-medium;
+		}
+
+		&-button {
+			
+		}
+	}
+}
