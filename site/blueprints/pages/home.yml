@@ -8,21 +8,66 @@ tabs:
       main:
         width: 2/3
         sections:
-          fields:
+          content:
             type: fields
             fields:
-              flexibles:
-                type: blocks
+              h1:
+                type: text
+                label: Titre H1
+              tagline:
+                type: text
+                label: Tagline
+              link_vote:
+                type: object
+                label: Lien du vote
+                fields:
+                  link:
+                    type: link
+                    label: Lien
+                  linkText:
+                    type: text
+                    label: Texte du lien
+                  target:
+                    type: toggle
+                    text: Ouvrir dans une nouvelle fenêtre
+              link_form:
+                type: object
+                label: Lien du formulaire
+                fields:
+                  link:
+                    type: link
+                    label: Lien
+                  linkText:
+                    type: text
+                    label: Texte du lien
+                  target:
+                    type: toggle
+                    text: Ouvrir dans une nouvelle fenêtre
+              labelVote:
+                type: text
+                label: Texte des dates
+              dateDebut:
+                type: text
+                label: Date de début
+              dateFin:
+                type: text
+                label: Date de fin   
       sidebar:
         width: 1/3
         sections:
-          pages:
-            type: pages
-            template: default
-          files:
-            type: files
-
-
+          sideContent:
+            type: fields
+            fields:
+              video:
+                type: files
+                multiple: false
   seo:
     label: SEO
-    icon: page
+    icon: search
+    fields:
+      seoTitle:
+        label: Titre SEO
+        type: text
+      seoDescription:
+        label: Description SEO
+        type: text

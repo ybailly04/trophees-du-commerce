@@ -13,10 +13,11 @@ button {
     font-family: $font;
     background: $black;
     color: $white;
-    font-size: 0.8rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 0.8em;
+    padding: 1.2rem 1.5rem;
     letter-spacing: 0.05em;
     font-weight: 500;
+    border-radius: 6px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -24,9 +25,19 @@ button {
     text-transform: uppercase;
     white-space: nowrap;
 
+    &:disabled{
+        cursor: not-allowed;
+    }
+
     svg {
-        width: 0.8rem;
-        height: 0.8rem;
+        display: inline-flex;
+        width: 1.2rem;
+        height: 1.2rem;
+        stroke: currentColor;
+        flex-shrink: 0;
+        & + *{
+            margin: 0 0 0 1em;
+        }
     }
 
     &-inner {
@@ -34,6 +45,9 @@ button {
         pointer-events: none;
         display: flex;
         height: 100%;
+        & + *{
+            margin: 0 0 0 1em;
+        }
     }
 
     &-text {
@@ -41,51 +55,29 @@ button {
         transition: translate 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
-    &:hover {
-        .button-text {
-            translate: 0 calc(2lh * -1) 0;
+    &:not(:disabled){
+        &:hover {
+            .button-text {
+                translate: 0 calc(2lh * -1) 0;
+            }
         }
     }
 
     &-primary {
         @extend .button;
-        background-color: $maroon;
-        &::before {
-            content: "";
-            display: inline-block;
-            height: 0;
-            width: 0;
-            border-top: 1.6em solid transparent;
-            border-bottom: 1.6em solid transparent;
-            border-left: 0.5em solid $maroon;
-            position: absolute;
-            top: 0;
-            right: 0;
-            transform: translateX(100%);
-        }
-        &::after {
-            content: "";
-            display: inline-block;
-            height: 0;
-            width: 0;
-            border-top: 1.6em solid transparent;
-            border-bottom: 1.6em solid transparent;
-            border-right: 0.5em solid $maroon;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translateX(-100%);
-        }
+        color: $color-main;
+        background-color: $bordeaux;
     }
 
     &-secondary {
-        @extend .button-primary;
-        background-color: $white;
-        color: $brown;
-        &::before,
-        &::after {
-            border-left-color: $white;
-            border-right-color: $white;
-        }
+        @extend .button;
+        background-color: $orange;
+        color: $white;
+    }
+
+    &-secondary {
+        @extend .button;
+        background-color: $beige;
+        color: $bordeaux;
     }
 }

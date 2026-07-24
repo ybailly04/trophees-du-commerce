@@ -2,19 +2,27 @@ Title: El Pueblo
 
 ----
 
-Adress: 
+Adress: 33 Rue Sommeiller, Annecy
 
 ----
 
-Email: 
+Email: pueblo@website.fr
 
 ----
 
-Phone: 
+Phone: 04.50.26.35.89
 
 ----
 
-Description: 
+Description: Cocktails crafted with care, spirits sourced from around the world, and a warm, intimate atmosphere where the music sets the mood and every evening feels like a celebration. Whether you're here for a quiet drink or a night out with friends, our bartenders are dedicated to making every moment memorable.
+
+----
+
+Galery:
+
+- file://fy0xvgxc6pzvirfm
+- file://rhoxykujlorwross
+- file://5gdih0cvmn5tqq7h
 
 ----
 
@@ -22,7 +30,11 @@ Count: 2
 
 ----
 
-Image: - file://9v0gxleg9oefctjc
+Logo: - file://jsflhge9fj5gf45m
+
+----
+
+Image: - file://gdfzukaghk5ld62s
 
 ----
 
@@ -30,11 +42,11 @@ Categories: - page://ogbf14pujme2h4av
 
 ----
 
-Website: 
+Website: https://elpueblo-annecy.fr/
 
 ----
 
-Instagram: 
+Instagram: https://www.instagram.com/el_pueblo_annecy/
 
 ----
 

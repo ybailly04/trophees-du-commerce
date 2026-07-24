@@ -1,0 +1,94 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.form {
+    @include container;
+    padding-top: 8em;
+    padding-bottom: 6em;
+
+    &-title{
+        text-transform: uppercase;
+        color: $color-main;
+        text-align: center;
+        font-size: 4em;
+    }
+
+    &-subtitle{
+        font-size: 1em;
+        font-family: $font;
+        color: $bordeaux;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    &-form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em 1em;
+        max-width: 70em;
+        margin: 4em auto 0 auto;
+        @media #{$md} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-field{
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+
+        &.full{
+            grid-column: span 2;
+            @media #{$md} {
+                grid-column: span 1;
+            }
+        }
+
+        label{
+            color: $color-main;
+            font-family: $font-secondary;
+            text-transform: uppercase;
+            > span{
+                color: $bordeaux;
+            }
+        }
+
+        input,
+        textarea,
+        select{
+            padding: 1em 1.5em;
+            border-radius: 6px;
+            background-color: transparent;
+            border: 1px solid;
+            border-color: rgba($bordeaux, .25);
+        }
+
+        .bfi-container{
+            background-color: transparent;
+            border: 1px dashed rgba($bordeaux, .25);
+            padding: 1em 2em 1em 1.5em;
+        }
+        .bfi-file{
+            background: $bordeaux;
+
+            .bfi-clear{
+                right: 50px;
+            }
+        }
+
+        &-info{
+            font-size: .8em;
+            color: $bordeaux;
+        }
+    }
+
+    &-submit{
+        margin: 0 auto;
+        align-self: center;
+        grid-column: span 2;
+        width: min(25rem, 100%);
+        @media #{$md} {
+            grid-column: 1;
+        }
+    }
+}

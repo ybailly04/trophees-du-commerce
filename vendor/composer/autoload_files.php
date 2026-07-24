@@ -16,4 +16,8 @@ return array(
     'f864ae44e8154e5ff6f4eec32f46d37f' => $baseDir . '/kirby/config/setup.php',
     '87988fc7b1c1f093da22a1a3de972f3a' => $baseDir . '/kirby/config/helpers.php',
     '1f7ddc2baab73fdd75a4663f7a275bb1' => $baseDir . '/site/plugins/kirby-uniform/src/helpers.php',
+    '60e72e7c5cc2831b4a26c80d9effdd7e' => $baseDir . '/site/plugins/kirby-imagex/helpers/aspectRatio.php',
+    '7b44a6b9bebaef7092263c826df52198' => $baseDir . '/site/plugins/kirby-imagex/helpers/attributes.php',
+    '83f47196334d533341703d365cdbdcc8' => $baseDir . '/site/plugins/kirby-imagex/helpers/misc.php',
+    '78e8cfa403330319c8b5b11818ed9660' => $baseDir . '/site/plugins/kirby-imagex/helpers/srcset.php',
 );

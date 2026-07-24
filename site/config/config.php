@@ -68,17 +68,45 @@ return [
                     ]);
                 });
 
-                // Upload de l'image si fournie
-                if (
-                    isset($_FILES['image']) &&
-                    $_FILES['image']['error'] === UPLOAD_ERR_OK &&
-                    $page instanceof \Kirby\Cms\Page
-                ) {
+                // Upload des fichiers (logo, image, galerie) et mise à jour du contenu en une seule fois
+                if ($page instanceof \Kirby\Cms\Page) {
                     kirby()->impersonate('kirby', function () use ($page) {
-                        $page->createFile([
-                            'source'   => $_FILES['image']['tmp_name'],
-                            'filename' => $_FILES['image']['name'],
-                        ]);
+                        $update = [];
+
+                        foreach (['logo', 'image'] as $field) {
+                            if (($_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                                continue;
+                            }
+
+                            $update[$field] = $page->createFile([
+                                'source'   => $_FILES[$field]['tmp_name'],
+                                'filename' => $_FILES[$field]['name'],
+                            ])->uuid()->toString();
+                        }
+
+                        if (isset($_FILES['gallery'])) {
+                            $galleryUuids = [];
+                            $names = $_FILES['gallery']['name'] ?? [];
+
+                            foreach ($names as $i => $name) {
+                                if ($_FILES['gallery']['error'][$i] !== UPLOAD_ERR_OK) {
+                                    continue;
+                                }
+
+                                $galleryUuids[] = $page->createFile([
+                                    'source'   => $_FILES['gallery']['tmp_name'][$i],
+                                    'filename' => $name,
+                                ])->uuid()->toString();
+                            }
+
+                            if (!empty($galleryUuids)) {
+                                $update['galery'] = $galleryUuids;
+                            }
+                        }
+
+                        if (!empty($update)) {
+                            $page->update($update);
+                        }
                     });
                 }
 
@@ -119,18 +147,37 @@ return [
 
                 return Response::json(['count' => $count]);
             }
-        ],
-        [
-        'pattern' => 'logout',
-        'action'  => function() {
-
-            if ($user = kirby()->user()) {
-            $user->logout();
-            }
-
-            go('login');
-
-        }
+        ]
+    ],
+    'timnarr.imagex' => [
+        'cache' => true,
+        'compareFormatsWeights' => 'mobile',
+        'customLazyloading' => false,
+        'formats' => ['webp'],
+        'addOriginalFormatAsSource' => false,
+        'noSrcsetInImg' => false,
+        'relativeUrls' => false,
+    ],
+    'thumbs' => [
+        'srcsets' => [
+            'default' => [
+                '800w' => ['width' => 800, 'quality' => 80],
+                '1024w' => ['width' => 1024, 'quality' => 80],
+                '1440w' => ['width' => 1440, 'quality' => 80],
+                '2048w' => ['width' => 2048, 'quality' => 80]
+            ],
+            'half' => [
+                '400w' => ['width' => 400, 'quality' => 80],
+                '800w' => ['width' => 800, 'quality' => 80],
+                '1024w' => ['width' => 1024, 'quality' => 80],
+                '1440w' => ['width' => 1440, 'quality' => 80],
+            ],
+            'half-webp' => [ // preset for webp
+                '400w'  => ['width' =>  400, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '800w'  => ['width' =>  800, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '1400w' => ['width' => 1400, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+            ],
         ]
     ]
 ];

@@ -18,7 +18,15 @@ Description: Ceci est la description
 
 ----
 
+Galery: 
+
+----
+
 Count: 1
+
+----
+
+Logo: 
 
 ----
 
@@ -26,7 +34,7 @@ Image: - file://srtvl4ymckr5f2gs
 
 ----
 
-Categories: - page://pm43vipnquyhirzd
+Categories: - page://njv4y74mlyxynnmo
 
 ----
 

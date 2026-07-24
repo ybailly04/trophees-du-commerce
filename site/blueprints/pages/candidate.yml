@@ -26,6 +26,11 @@ columns:
                 type: textarea
                 size: medium
                 maxlength: 600
+              galery:
+                label: Galerie d'images
+                type: files
+                multiple: true
+                layout: cards
               
       sidebar:
         width: 1/3
@@ -38,6 +43,11 @@ columns:
                 type: number
                 disabled: true
                 default: 0
+              logo:
+                label: Logo
+                type: files
+                multiple: false
+                layout: cards
               image:
                 label: Image d'illustration
                 type: files

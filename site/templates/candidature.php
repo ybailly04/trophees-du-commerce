@@ -1,3 +1,13 @@
-Merci d'avoir participé aux Trophées du Commerce ! 
+<?php snippet('header') ?>
 
-Nous vous enverrons des informations bientôt.
+<main data-barba="container" data-barba-namespace="confirmation">
+
+    <div class="page">
+
+        <div class="page-message">
+            <?= $page->confirmation() ?>
+        </div>
+
+    </div>
+
+<?php snippet('footer') ?>

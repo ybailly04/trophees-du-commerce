@@ -17,6 +17,10 @@ class ComposerStaticInita77725a83c2022086482c9c1dd421fdd
         'f864ae44e8154e5ff6f4eec32f46d37f' => __DIR__ . '/../..' . '/kirby/config/setup.php',
         '87988fc7b1c1f093da22a1a3de972f3a' => __DIR__ . '/../..' . '/kirby/config/helpers.php',
         '1f7ddc2baab73fdd75a4663f7a275bb1' => __DIR__ . '/../..' . '/site/plugins/kirby-uniform/src/helpers.php',
+        '60e72e7c5cc2831b4a26c80d9effdd7e' => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/helpers/aspectRatio.php',
+        '7b44a6b9bebaef7092263c826df52198' => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/helpers/attributes.php',
+        '83f47196334d533341703d365cdbdcc8' => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/helpers/misc.php',
+        '78e8cfa403330319c8b5b11818ed9660' => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/helpers/srcset.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -27,6 +31,10 @@ class ComposerStaticInita77725a83c2022086482c9c1dd421fdd
         'U' => 
         array (
             'Uniform\\' => 8,
+        ),
+        'T' => 
+        array (
+            'TimNarr\\' => 8,
         ),
         'S' => 
         array (
@@ -72,6 +80,10 @@ class ComposerStaticInita77725a83c2022086482c9c1dd421fdd
         'Uniform\\' => 
         array (
             0 => __DIR__ . '/../..' . '/site/plugins/kirby-uniform/src',
+        ),
+        'TimNarr\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/classes',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -629,6 +641,7 @@ class ComposerStaticInita77725a83c2022086482c9c1dd421fdd
         'Symfony\\Polyfill\\Intl\\Idn\\Resources\\unidata\\Regex' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/Resources/unidata/Regex.php',
         'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Normalizer.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
+        'TimNarr\\Imagex' => __DIR__ . '/../..' . '/site/plugins/kirby-imagex/classes/Imagex.php',
         'Uniform\\Actions\\Action' => __DIR__ . '/../..' . '/site/plugins/kirby-uniform/src/Actions/Action.php',
         'Uniform\\Actions\\DumpAction' => __DIR__ . '/../..' . '/site/plugins/kirby-uniform/src/Actions/DumpAction.php',
         'Uniform\\Actions\\EmailAction' => __DIR__ . '/../..' . '/site/plugins/kirby-uniform/src/Actions/EmailAction.php',

@@ -1,0 +1,49 @@
+Title: BIM Agency
+
+----
+
+Adress: 190 route de Sarves
+
+----
+
+Email: yann@bimagency.fr
+
+----
+
+Phone: 01.01.01.01.01
+
+----
+
+Description: Une agence de communication sur Annecy
+
+----
+
+Galery: 
+
+----
+
+Count: 1
+
+----
+
+Logo: - file://v8rikmko07nqc81u
+
+----
+
+Image: - file://mhdkv3rquv8ydwo8
+
+----
+
+Categories: - page://os5a6bykfbpizxvr
+
+----
+
+Website: https://bimagency.fr
+
+----
+
+Instagram: https://intagram.com/bimagency
+
+----
+
+Uuid: n1q2bjozgs5ooztw

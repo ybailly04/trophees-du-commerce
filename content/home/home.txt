@@ -1,9 +1,0 @@
-Title: Accueil
-
-----
-
-Text: Du texte
-
-----
-
-Uuid: vpmettal6yd201gc

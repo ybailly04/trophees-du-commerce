@@ -1,13 +1,11 @@
 <?php snippet('header') ?>
 
-<main>
+<main data-barba="container" data-barba-namespace="categories">
 
-  <h1>Catégories</h1>
-
-  <?php foreach($page->children() as $category): ?>
-  <?php snippet('category', ['category' => $category]) ?>
-  <?php endforeach ?>
-
-</main>
+  <div class="categories">
+  
+    <?php snippet('category', ['category' => $page->children()->first()]) ?>
+      
+  </div>
 
 <?php snippet('footer') ?>

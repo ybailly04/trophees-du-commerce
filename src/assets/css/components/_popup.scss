@@ -1,7 +1,7 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-.bim-popup {
+.popup{
 	position: fixed;
 	z-index: 100;
 	left: 0;
@@ -35,20 +35,19 @@
 
 	&-content {
 		position: absolute;
-		top: 4rem;
-		right: 4rem;
+		top: 1rem;
+		right: 1rem;
 		z-index: 1;
-		background: $black;
-		color: $white;
-		padding: 4rem;
-		width: calc(min(50vw, 800px));
-		height: calc((100dvh - 8rem));
+		padding: .5rem 2rem;
+		width: calc(min(40vw, 500px));
+		height: calc((100dvh - 4rem));
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		align-items: flex-start;
-		transform: translateY(-100%);
+		align-items: flex-end;
+		gap:10px;
+		transform: translateX(calc(100% + 4rem));
 		transition: transform $ts-smooth;
 		.__menu-active &{
 			transform: translate(0);
@@ -64,55 +63,70 @@
 	}
 
 	&-menu{
-		margin-top: 4em;
+		background-color: $beige;
+		color: $bordeaux;
+		border-radius: 12px;
+		padding: 2em;
+		width: 100%;
+		height: 35%;
 		// Menu niveau 1
 		> ul{
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
 			align-items: flex-start;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
 			
 			>li{
 				margin: .5rem 0;
 				>a {
 					text-decoration: none;
 					color: currentColor;
-					font-size: 3.2rem;
-					line-height: 1;
+					font-size: 1.8em;
+					text-transform: uppercase;
 					font-family: $font-secondary;
-					letter-spacing: -0.025em;
-					@include underline_alt();
+					font-weight: 500;
+					@include underline_alt(2px);
 					@media #{$sm} {
 						font-size: 2rem;
 					}
-					
 				}
 			}
 		}
 	}
 
 	&-submenu{
+		background-color: $beige;
+		color: $bordeaux;
+		border-radius: 12px;
+		padding: 2em;
 		width: 100%;
-		margin: auto 0 0 0;
+		height: 35%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 		// Menu niveau 2
 		> ul{
-			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
 			margin: 0;
+			padding: 0;
 			list-style-type: none;
-			width: 100%;
 
 			> li{
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 1rem;
-				& + *{
-					margin: 4rem 0 0 0;
-				}
-
+				margin: .25rem 0;
 				> a{
-					pointer-events: none;
-					color: $gray;
+					color: $bordeaux;
 					text-decoration: none;
+					font-weight: 500;
+					font-family: $font-secondary;
+					font-size: 1.2em;
+					@include underline_alt(2px);
 				}
 				
 				// Menu niveau 3
@@ -132,23 +146,33 @@
 				}
 			}
 		}
+
+		&-text{
+			margin-top: auto;
+			max-width: 60%;
+			font-weight: 500;
+
+			a{
+				text-decoration: none;
+				color: $color-main;
+				@include underline_alt;
+			}
+		}
 	}
 
 	&-close {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: center;
-		position: absolute;
-		top: 1rem;
-		left: 1.5rem;
 		width: auto;
-		height: 3rem;
+		background-color: $beige;
 		cursor: pointer;
-		border-radius: 50%;
-		background-color: transparent;
-		padding: 0;
+		border-radius: 6px;
+		padding: .5em 1em;
 		text-transform: uppercase;
 		color: currentColor;
+		font-family: $font-secondary;
+		color: $bordeaux;
 		&:hover{
 			svg{
 				transform: rotate(180deg) scale(0.8);
@@ -160,10 +184,56 @@
 			display: block;
 			fill: $black;
 			stroke: $black;
-			width: 15px;
-			height: 15px;
 			transition: transform $ts-smooth;
 			pointer-events: none;
+			margin: 0 0 0 .5em;
+		}
+		span{
+			margin-bottom: 1px;
+		}
+	}
+
+	&-vote{
+		position: relative;
+		background-color: $bordeaux;
+		color: $color-main;
+		border-radius: 12px;
+		padding: 2em;
+		width: 100%;
+		height: 20%;
+		text-decoration: none;
+		overflow: hidden;
+		transition: color $ts-smooth;
+		&:hover{
+			color: $beige;
+		}
+
+		&-text{
+			position: relative;
+			z-index: 2;
+			font-weight: 500;
+			text-transform: uppercase;
+			font-family: $font-secondary;
+			font-size: 2em;
+			max-width: 50%;
+			transition: color $ts-smooth;
+		}
+
+		&-arrow{
+			position: absolute;
+			bottom: 1em;
+			right: 1em;
+		}
+
+		&-svg{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: .15;
 		}
 	}
 }

@@ -488,6 +488,7 @@ return array(
     'Symfony\\Polyfill\\Intl\\Idn\\Resources\\unidata\\Regex' => $vendorDir . '/symfony/polyfill-intl-idn/Resources/unidata/Regex.php',
     'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Normalizer.php',
     'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',
+    'TimNarr\\Imagex' => $baseDir . '/site/plugins/kirby-imagex/classes/Imagex.php',
     'Uniform\\Actions\\Action' => $baseDir . '/site/plugins/kirby-uniform/src/Actions/Action.php',
     'Uniform\\Actions\\DumpAction' => $baseDir . '/site/plugins/kirby-uniform/src/Actions/DumpAction.php',
     'Uniform\\Actions\\EmailAction' => $baseDir . '/site/plugins/kirby-uniform/src/Actions/EmailAction.php',

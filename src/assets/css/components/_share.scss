@@ -1,0 +1,77 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.social-share {
+  grid-column-gap: .5em;
+  grid-row-gap: .5em;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.social-share__button {
+  color: $bordeaux;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $beige;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-share__icon {
+  width: 1.5em;
+  display: flex;
+}
+
+.social-share__icon.is--success {
+  position: absolute;
+}
+
+/* Clipboard Success Icon */
+[data-social-share-type="clipboard"] .social-share__icon {
+  transition: transform 0.4s cubic-bezier(0.625, 0.05, 0, 1);
+  transform: translateY(0%) rotate(0.001deg);
+}
+
+[data-social-share-type="clipboard"] .social-share__icon.is--success {
+  color: #009E3B;
+  transform: translateY(200%) rotate(0.001deg);
+}
+
+[data-social-share-type="clipboard"][data-social-share-success] .social-share__icon {
+  transform: translateY(-200%) rotate(0.001deg);
+}
+
+[data-social-share-type="clipboard"][data-social-share-success] .social-share__icon.is--success {
+  transform: translateY(0%) rotate(0.001deg);
+}
+
+/* Optional hover styling */
+[data-social-share-type] {
+  transition: all 0.4s cubic-bezier(0.625, 0.05, 0, 1);
+  transform: scale(1) rotate(0.001deg);
+}
+
+[data-social-share]:has([data-social-share-type]:hover) [data-social-share-type] {
+  transform: scale(0.9) rotate(0.001deg);
+}
+
+[data-social-share]:has([data-social-share-type]:hover) [data-social-share-type]:hover  {
+  transform: scale(1.1) rotate(0.001deg);
+}
+
+/* Optional color styling */
+[data-social-share-type="linkedin"] {color: #0A66C2;}
+[data-social-share-type="x"] {color: #000000;}
+[data-social-share-type="facebook"] {color: #1877F2;}
+[data-social-share-type="pinterest"] {color: #E60023;}
+[data-social-share-type="whatsapp"] {color: #25D366;}
+[data-social-share-type="reddit"] {color: #FF4500;}
+[data-social-share-type="telegram"] {color: #0088CC;}

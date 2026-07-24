@@ -1,5 +1,5 @@
-$mf-color-base:#000 !default;
-$mf-color-text:#fff !default;
+@use '../variables' as *;
+@use '../mixins' as *;
 
 .mf-cursor {
 
@@ -14,13 +14,13 @@ $mf-color-text:#fff !default;
     }
 
     &.-text {
+        
         &:before {
-            opacity:0.85;
-            transform:scale(1.7);
+           transform:scale(0);
         }
 
         &.-active:before {
-            transform:scale(1.6);
+            //transform:scale(1.6);
             transition-duration:0.2s;
         }
     }
@@ -42,11 +42,34 @@ $mf-color-text:#fff !default;
     }
 
     &-text {
-
+        position: absolute;
+        top: 18px;
+        left: -18px;
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(1) rotate(0);
+        //opacity: 0;
+        color: $beige;
+        font-size: .8em;
+        line-height: 1;
+        text-align: left;
+        transition: opacity 0.4s, transform 0.3s;
+        background-color: $black;
+        white-space: nowrap;
+        padding: 1em 1.5em;
+        text-transform: uppercase;
+        font-family: $font;
+        border-radius: 6px;
+        font-weight: 500;
+        @media #{$lg} {
+            font-size: .7em;
+        }
     }
 
     &-media {
-
         img, video {
         
         }

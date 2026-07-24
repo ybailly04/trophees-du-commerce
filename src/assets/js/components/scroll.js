@@ -22,38 +22,5 @@ export class ScrollManager {
 
 		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
 		gsap.ticker.lagSmoothing(0);
-
-
-		//Control scroll methods
-		this.stop = document.querySelectorAll('[data-lenis-stop]');
-		this.resume = document.querySelectorAll('[data-lenis-resume]');
-		this.toggle = document.querySelectorAll('[data-lenis-toggle]');
-
-		if(this.stop){
-			this.stop.forEach(element => {
-				element.addEventListener('click', () => lenis.stop());
-			});
-		}
-		
-		if(this.resume){
-			this.resume.forEach(element => {
-				element.addEventListener('click', () => lenis.resume());
-			});
-		}
-
-		if(this.toggle){
-			this.toggle.forEach(element => {
-				element.addEventListener('click', () => {
-					const currentState = target.getAttribute("data-lenis-toggle");
-					if (currentState === "stop") {
-						lenis.stop();
-						target.setAttribute("data-lenis-toggle", "resume");
-					} else {
-						lenis.start();
-						target.setAttribute("data-lenis-toggle", "stop");
-					}
-				});
-			});	
-		}
 	}
 }

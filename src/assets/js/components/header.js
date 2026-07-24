@@ -1,9 +1,11 @@
 const html = document.querySelector('html');
 
-class HeaderManager {
+export class HeaderManager {
 	
 	constructor() {
 		this.buttons = document.querySelectorAll('[data-menu-button]');
+		console.log(this.buttons);
+		
 
 		if(this.buttons){
 			this.buttons.forEach(element => {
@@ -15,6 +17,7 @@ class HeaderManager {
 	// Toggle Animation
   	handleMenu(target){
 		const currentState = target.getAttribute("data-menu-button");
+		
 		if (currentState === "burger") {
 			this.menuOpen()
 			//target.setAttribute("data-menu-button", "close");
@@ -32,7 +35,3 @@ class HeaderManager {
 		html.classList.remove('__menu-active')
 	}
 }
-
-[].forEach.call(document.querySelectorAll('.header'), (el) => {
-    new HeaderManager(el);
-});

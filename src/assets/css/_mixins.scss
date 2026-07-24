@@ -7,8 +7,8 @@
     max-width: $width;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+    padding-left: 4em;
+    padding-right: 4em;
     width: 100%;
     @media #{$md} {
         padding-left: 1.5em;
@@ -123,7 +123,7 @@
     }
 }
 
-@mixin underline_alt($height: 1px, $color: currentcolor) {
+@mixin underline_alt($height: .5px, $color: currentcolor) {
     text-decoration: none;
     position: relative;
     display: inline-block;

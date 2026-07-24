@@ -1,24 +1,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="<?= $site->description() ?>">
+  <meta name="title" content="<?= $page->seoTitle()->or($page->title()) ?>">
+  <meta name="description" content="<?= $page->seoTitle()->or($site->description()) ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
     <?= $page->title() ?> | <?= $site->title() ?>
   </title>
   <?= vite()->css("assets/css/style.scss") ?>
 </head>
-<body>
 
-  <header class="header">
+<body data-barba="wrapper">
+  <header class="header <?= isset($isHome) && $isHome ? "home" : "" ?>">
     <div class="header-wrapper">
-      <a class="header-button" href="/categories">
-        <span>Catégories</span>
-      </a>
       <a class="header-logo" href="<?= $site->url() ?>" title="Trophées du commerce">
         <?= $site->image('logo.svg') ?>
       </a>
-      <button class="header-nav" data-menu>
-        <span>Menu</span>
-      </button>
+      <div class="header-right">
+        <button class="header-search">
+        </button>
+        <button class="header-burger" data-menu-button="burger">
+          <div class="header-burger-title">MENU</div>
+          <div class="header-burger-burger">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+        </button>
+      </div>
     </div>
   </header>

@@ -1,0 +1,103 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.categories{
+    @include container;
+}
+.category{
+    padding-top: 8em;
+    @include container;
+    &-top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1em 0 3em;
+        padding: 0 4em;
+    }
+    &-index{
+        text-align: center;
+        color: $bordeaux;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: $font-secondary;
+    }
+    &-title{
+        color: $color-main;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 1rem 0 0 0;
+    }
+    &-listing{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        gap: 2em;
+        @media #{$md} {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &-logo{
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    &-list{
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        background-color: $white;
+        padding: 1em;
+        border-radius: 12px;
+    }
+
+    &-link{
+        background-color: $beige;
+        text-transform: uppercase;
+        color: $orange;
+        border-radius: 6px;
+        padding: .5em 2em;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: .9em;
+    }
+
+    &-vote{
+        background-color: $bordeaux;
+        text-transform: uppercase;
+        color: $beige;
+        border-radius: 6px;
+        padding: .5em 2em;
+        text-align: center;
+        font-weight: 500;
+        font-size: .9em;
+        font-family: $font;
+
+        &:disabled{
+            background-color: $black;
+        }
+    }
+
+    &-prev{
+
+        &-svg{
+            width: 4em;
+            height: 4em;
+
+            &.disabled{
+                opacity: .2;
+            }
+        }
+    }
+    
+    &-next{
+
+        &-svg{
+            width: 4em;
+            height: 4em;
+        }
+    }
+}

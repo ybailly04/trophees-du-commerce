@@ -46,9 +46,6 @@
     --color-dark: #{$black};
 }
 
-svg {
-    fill: currentColor;
-}
 
 html {
     margin: 0;
@@ -66,6 +63,14 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    min-height: 100lvh;
+}
+::selection{
+    background-color: $color-main;
+    color: $white;
+}
+
 h1,
 h2,
 h3,
@@ -78,7 +83,7 @@ h5 {
 }
 
 h1 {
-    font-size: 8em;
+    font-size: 6em;
 }
 h2 {
     font-size: 5em;
@@ -91,10 +96,6 @@ h4 {
 }
 h5 {
     font-size: 1.25em;
-}
-
-.main-content {
-    min-height: 100vh;
 }
 
 .container {
