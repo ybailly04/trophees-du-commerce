@@ -1,0 +1,49 @@
+Title: Annecy Aventure
+
+----
+
+Adress: 4 Avenue du Petit Port, Annecy
+
+----
+
+Email: contact@annecy-aventure.fr
+
+----
+
+Phone: 04.50.44.55.66
+
+----
+
+Description: Location de paddles, kayaks et vélos au bord du lac, ainsi que sorties encadrées en montagne. Une équipe de passionnés pour découvrir les Bauges et le lac d'Annecy autrement, en famille ou entre amis.
+
+----
+
+Galery:
+
+----
+
+Count: 0
+
+----
+
+Logo:
+
+----
+
+Image:
+
+----
+
+Categories: - page://q048rhwhrmekrexo
+
+----
+
+Website: https://annecy-aventure.fr
+
+----
+
+Instagram: https://www.instagram.com/annecy_aventure/
+
+----
+
+Uuid: c21561e46a47c71c

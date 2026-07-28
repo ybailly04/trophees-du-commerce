@@ -1,0 +1,9 @@
+name: Grand Texte
+icon: text
+wysiwyg: true
+preview: box
+fields:
+  text:
+    label: Grand texte
+    type: writer
+    placeholder: Texte...

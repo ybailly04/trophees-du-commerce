@@ -3,6 +3,9 @@
 
 .mf-cursor {
 
+    @media print {
+        display: none;        
+    }
     &:before {
         
     }

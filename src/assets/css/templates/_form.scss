@@ -11,6 +11,9 @@
         color: $color-main;
         text-align: center;
         font-size: 4em;
+        @media #{$sm} {
+            font-size: 2em;
+        }
     }
 
     &-subtitle{

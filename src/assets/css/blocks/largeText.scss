@@ -1,0 +1,12 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+
+.block-type-largeText{
+    max-width: 50rem;
+    p{
+        font-size: 2em;
+        color: $bordeaux;
+        font-family: $font-secondary;
+    }
+}

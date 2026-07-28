@@ -3,9 +3,17 @@ const html = document.querySelector('html');
 export class HeaderManager {
 	
 	constructor() {
-		this.buttons = document.querySelectorAll('[data-menu-button]');
-		console.log(this.buttons);
-		
+		this.buttons = document.querySelectorAll('[data-menu-button]');		
+
+		if(this.buttons){
+			this.buttons.forEach(element => {
+				element.addEventListener('click', () => this.handleMenu(element));
+			})
+		}
+	}
+
+	initBurgers(){
+		this.buttons = document.querySelectorAll('[data-menu-button]');		
 
 		if(this.buttons){
 			this.buttons.forEach(element => {

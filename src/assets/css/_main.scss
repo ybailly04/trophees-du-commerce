@@ -61,6 +61,7 @@ body {
     margin: 0 !important;
     min-height: 100vh;
     overflow-x: hidden;
+    scrollbar-gutter: stable;
 }
 
 main {
@@ -83,10 +84,16 @@ h5 {
 }
 
 h1 {
-    font-size: 6em;
+    font-size: 5em;
+    @media #{$xs} {
+        font-size: 4em;
+    }
 }
 h2 {
-    font-size: 5em;
+    font-size: 4em;
+    @media #{$xs} {
+        font-size: 3em;
+    }
 }
 h3 {
     font-size: 2.5em;

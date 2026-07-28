@@ -1,4 +1,20 @@
-Title: A propos
+Title: La fête du commerce
+
+----
+
+Layout: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},"id":"326a0ad2-9103-4ec4-906c-eb715f0a1b65","isHidden":false,"type":"largeText"}],"id":"27610810-9992-4b1c-936e-76d600e9089d","width":"1/1"}],"id":"f141171b-6588-4f9d-995a-949f1e04427f"}]
+
+----
+
+Toggleheader: true
+
+----
+
+Imageheader: - file://qlolssqqpkcfcsx8
+
+----
+
+Intro: Récompense les commerces d'Annecy qui font vivre la ville et son économie locale !
 
 ----
 

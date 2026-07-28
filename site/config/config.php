@@ -166,6 +166,12 @@ return [
                 '1440w' => ['width' => 1440, 'quality' => 80],
                 '2048w' => ['width' => 2048, 'quality' => 80]
             ],
+            'default-webp' => [ // preset for webp
+                '800w'  => ['width' =>  800, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '1400w' => ['width' => 1400, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '2048w' => ['width' => 2048, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+            ],
             'half' => [
                 '400w' => ['width' => 400, 'quality' => 80],
                 '800w' => ['width' => 800, 'quality' => 80],

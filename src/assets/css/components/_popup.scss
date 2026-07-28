@@ -53,11 +53,11 @@
 			transform: translate(0);
 		}
 		@media #{$md} {
-			padding: 1.5rem;
 			width: 100vw;
-			height: 75lvh;
+			height: 100svh;
 			top: 0;
 			right: 0;
+			padding: 1rem;
 		}
 		
 	}
@@ -90,7 +90,7 @@
 					font-weight: 500;
 					@include underline_alt(2px);
 					@media #{$sm} {
-						font-size: 2rem;
+						font-size: 1.4em;
 					}
 				}
 			}

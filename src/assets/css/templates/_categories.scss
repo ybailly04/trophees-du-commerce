@@ -2,17 +2,25 @@
 @use "../mixins" as *;
 
 .categories{
-    @include container;
+
 }
 .category{
     padding-top: 8em;
+    padding-bottom: 4em;
     @include container;
+    @media #{$sm} {
+        padding-top: 10em;
+    }
+
     &-top{
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin: 1em 0 3em;
         padding: 0 4em;
+        @media #{$md} {
+            padding: 0;
+        }
     }
     &-index{
         text-align: center;
@@ -26,6 +34,12 @@
         text-transform: uppercase;
         text-align: center;
         margin: 1rem 0 0 0;
+        @media #{$md} {
+            font-size: 2em;
+        }
+        @media #{$xs} {
+            font-size: 1.5em;
+        }
     }
     &-listing{
         display: grid;
@@ -36,6 +50,9 @@
         gap: 2em;
         @media #{$md} {
             grid-template-columns: repeat(3, 1fr);
+        }
+        @media #{$xs} {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -86,6 +103,10 @@
         &-svg{
             width: 4em;
             height: 4em;
+            @media #{$sm} {
+                width: 3em;
+                height: 3em;
+            }
 
             &.disabled{
                 opacity: .2;
@@ -98,6 +119,10 @@
         &-svg{
             width: 4em;
             height: 4em;
+            @media #{$sm} {
+                width: 3em;
+                height: 3em;
+            }
         }
     }
 }

@@ -1,0 +1,17 @@
+name: FAQ
+icon: question
+fields:
+  faq:
+    label: FAQ
+    type: structure
+    fields:
+      question:
+        label: Question
+        type: writer
+        inline: true
+        marks: false
+        placeholder: Votre question...
+      answer:
+        label: Réponse
+        marks: true
+        type: writer

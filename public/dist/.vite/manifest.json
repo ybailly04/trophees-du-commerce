@@ -1,6 +1,6 @@
 {
   "assets/css/style.scss": {
-    "file": "assets/style-DZKnHdfZ.css",
+    "file": "assets/style.css",
     "src": "assets/css/style.scss",
     "isEntry": true,
     "name": "style",
@@ -9,187 +9,187 @@
     ]
   },
   "assets/fonts/PPNeueMachina-InktrapLight.woff": {
-    "file": "assets/PPNeueMachina-InktrapLight-SXhFKIGB.woff",
+    "file": "fonts/PPNeueMachina-InktrapLight.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapLight.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapLight.woff2": {
-    "file": "assets/PPNeueMachina-InktrapLight-CVkLE0Bo.woff2",
+    "file": "fonts/PPNeueMachina-InktrapLight.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapLight.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapLightItalic.woff": {
-    "file": "assets/PPNeueMachina-InktrapLightItalic-D1A6rbk3.woff",
+    "file": "fonts/PPNeueMachina-InktrapLightItalic.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapLightItalic.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapLightItalic.woff2": {
-    "file": "assets/PPNeueMachina-InktrapLightItalic-DGN77d3O.woff2",
+    "file": "fonts/PPNeueMachina-InktrapLightItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapLightItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapMedium.woff": {
-    "file": "assets/PPNeueMachina-InktrapMedium-C71zAGbg.woff",
+    "file": "fonts/PPNeueMachina-InktrapMedium.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapMedium.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapMedium.woff2": {
-    "file": "assets/PPNeueMachina-InktrapMedium-CKNol5Ft.woff2",
+    "file": "fonts/PPNeueMachina-InktrapMedium.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapMedium.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapMediumItalic.woff": {
-    "file": "assets/PPNeueMachina-InktrapMediumItalic-CFX799or.woff",
+    "file": "fonts/PPNeueMachina-InktrapMediumItalic.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapMediumItalic.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapMediumItalic.woff2": {
-    "file": "assets/PPNeueMachina-InktrapMediumItalic-CxgOsnt2.woff2",
+    "file": "fonts/PPNeueMachina-InktrapMediumItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapMediumItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapRegular.woff": {
-    "file": "assets/PPNeueMachina-InktrapRegular-BlEViNw2.woff",
+    "file": "fonts/PPNeueMachina-InktrapRegular.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapRegular.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapRegular.woff2": {
-    "file": "assets/PPNeueMachina-InktrapRegular-B0WHi8hS.woff2",
+    "file": "fonts/PPNeueMachina-InktrapRegular.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapRegular.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapRegularItalic.woff": {
-    "file": "assets/PPNeueMachina-InktrapRegularItalic-BqsDmVBG.woff",
+    "file": "fonts/PPNeueMachina-InktrapRegularItalic.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapRegularItalic.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapRegularItalic.woff2": {
-    "file": "assets/PPNeueMachina-InktrapRegularItalic-SmVvauZc.woff2",
+    "file": "fonts/PPNeueMachina-InktrapRegularItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapRegularItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapThin.woff": {
-    "file": "assets/PPNeueMachina-InktrapThin-_aXq15-o.woff",
+    "file": "fonts/PPNeueMachina-InktrapThin.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapThin.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapThin.woff2": {
-    "file": "assets/PPNeueMachina-InktrapThin-C3aK4Dwj.woff2",
+    "file": "fonts/PPNeueMachina-InktrapThin.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapThin.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapThinItalic.woff": {
-    "file": "assets/PPNeueMachina-InktrapThinItalic-C6rENF0-.woff",
+    "file": "fonts/PPNeueMachina-InktrapThinItalic.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapThinItalic.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapThinItalic.woff2": {
-    "file": "assets/PPNeueMachina-InktrapThinItalic-CBTZhX7U.woff2",
+    "file": "fonts/PPNeueMachina-InktrapThinItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapThinItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapUltrabold.woff": {
-    "file": "assets/PPNeueMachina-InktrapUltrabold-ypQ5zoMl.woff",
+    "file": "fonts/PPNeueMachina-InktrapUltrabold.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapUltrabold.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapUltrabold.woff2": {
-    "file": "assets/PPNeueMachina-InktrapUltrabold-0Yatvb7I.woff2",
+    "file": "fonts/PPNeueMachina-InktrapUltrabold.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapUltrabold.woff2"
   },
   "assets/fonts/PPNeueMachina-InktrapUltraboldItalic.woff": {
-    "file": "assets/PPNeueMachina-InktrapUltraboldItalic-CY6vAsLa.woff",
+    "file": "fonts/PPNeueMachina-InktrapUltraboldItalic.woff",
     "src": "assets/fonts/PPNeueMachina-InktrapUltraboldItalic.woff"
   },
   "assets/fonts/PPNeueMachina-InktrapUltraboldItalic.woff2": {
-    "file": "assets/PPNeueMachina-InktrapUltraboldItalic-kJv3R2QL.woff2",
+    "file": "fonts/PPNeueMachina-InktrapUltraboldItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-InktrapUltraboldItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainLight.woff": {
-    "file": "assets/PPNeueMachina-PlainLight----uT5a3.woff",
+    "file": "fonts/PPNeueMachina-PlainLight.woff",
     "src": "assets/fonts/PPNeueMachina-PlainLight.woff"
   },
   "assets/fonts/PPNeueMachina-PlainLight.woff2": {
-    "file": "assets/PPNeueMachina-PlainLight-Zffx68I_.woff2",
+    "file": "fonts/PPNeueMachina-PlainLight.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainLight.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainLightItalic.woff": {
-    "file": "assets/PPNeueMachina-PlainLightItalic-DM9bVcED.woff",
+    "file": "fonts/PPNeueMachina-PlainLightItalic.woff",
     "src": "assets/fonts/PPNeueMachina-PlainLightItalic.woff"
   },
   "assets/fonts/PPNeueMachina-PlainLightItalic.woff2": {
-    "file": "assets/PPNeueMachina-PlainLightItalic-e3_-blYm.woff2",
+    "file": "fonts/PPNeueMachina-PlainLightItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainLightItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainMedium.woff": {
-    "file": "assets/PPNeueMachina-PlainMedium-Dju5aEeG.woff",
+    "file": "fonts/PPNeueMachina-PlainMedium.woff",
     "src": "assets/fonts/PPNeueMachina-PlainMedium.woff"
   },
   "assets/fonts/PPNeueMachina-PlainMedium.woff2": {
-    "file": "assets/PPNeueMachina-PlainMedium-BQW-WYnX.woff2",
+    "file": "fonts/PPNeueMachina-PlainMedium.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainMedium.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainMediumItalic.woff": {
-    "file": "assets/PPNeueMachina-PlainMediumItalic-CdTbIcN6.woff",
+    "file": "fonts/PPNeueMachina-PlainMediumItalic.woff",
     "src": "assets/fonts/PPNeueMachina-PlainMediumItalic.woff"
   },
   "assets/fonts/PPNeueMachina-PlainMediumItalic.woff2": {
-    "file": "assets/PPNeueMachina-PlainMediumItalic-BhknAk13.woff2",
+    "file": "fonts/PPNeueMachina-PlainMediumItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainMediumItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainRegular.woff": {
-    "file": "assets/PPNeueMachina-PlainRegular-DZ3oFtX8.woff",
+    "file": "fonts/PPNeueMachina-PlainRegular.woff",
     "src": "assets/fonts/PPNeueMachina-PlainRegular.woff"
   },
   "assets/fonts/PPNeueMachina-PlainRegular.woff2": {
-    "file": "assets/PPNeueMachina-PlainRegular-Dd7xDVaZ.woff2",
+    "file": "fonts/PPNeueMachina-PlainRegular.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainRegular.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainRegularItalic.woff": {
-    "file": "assets/PPNeueMachina-PlainRegularItalic-Bxi0wWR3.woff",
+    "file": "fonts/PPNeueMachina-PlainRegularItalic.woff",
     "src": "assets/fonts/PPNeueMachina-PlainRegularItalic.woff"
   },
   "assets/fonts/PPNeueMachina-PlainRegularItalic.woff2": {
-    "file": "assets/PPNeueMachina-PlainRegularItalic-Jq2jlhD7.woff2",
+    "file": "fonts/PPNeueMachina-PlainRegularItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainRegularItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainThin.woff": {
-    "file": "assets/PPNeueMachina-PlainThin-EYpr6L7r.woff",
+    "file": "fonts/PPNeueMachina-PlainThin.woff",
     "src": "assets/fonts/PPNeueMachina-PlainThin.woff"
   },
   "assets/fonts/PPNeueMachina-PlainThin.woff2": {
-    "file": "assets/PPNeueMachina-PlainThin-t5cg5-7C.woff2",
+    "file": "fonts/PPNeueMachina-PlainThin.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainThin.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainThinItalic.woff": {
-    "file": "assets/PPNeueMachina-PlainThinItalic-DBAvG4n8.woff",
+    "file": "fonts/PPNeueMachina-PlainThinItalic.woff",
     "src": "assets/fonts/PPNeueMachina-PlainThinItalic.woff"
   },
   "assets/fonts/PPNeueMachina-PlainThinItalic.woff2": {
-    "file": "assets/PPNeueMachina-PlainThinItalic-Ct4ALKb2.woff2",
+    "file": "fonts/PPNeueMachina-PlainThinItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainThinItalic.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainUltrabold.woff": {
-    "file": "assets/PPNeueMachina-PlainUltrabold-DSvMOv-c.woff",
+    "file": "fonts/PPNeueMachina-PlainUltrabold.woff",
     "src": "assets/fonts/PPNeueMachina-PlainUltrabold.woff"
   },
   "assets/fonts/PPNeueMachina-PlainUltrabold.woff2": {
-    "file": "assets/PPNeueMachina-PlainUltrabold-WACB9RRs.woff2",
+    "file": "fonts/PPNeueMachina-PlainUltrabold.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainUltrabold.woff2"
   },
   "assets/fonts/PPNeueMachina-PlainUltraboldItalic.woff": {
-    "file": "assets/PPNeueMachina-PlainUltraboldItalic-COHLo6BA.woff",
+    "file": "fonts/PPNeueMachina-PlainUltraboldItalic.woff",
     "src": "assets/fonts/PPNeueMachina-PlainUltraboldItalic.woff"
   },
   "assets/fonts/PPNeueMachina-PlainUltraboldItalic.woff2": {
-    "file": "assets/PPNeueMachina-PlainUltraboldItalic-DOA8yD8p.woff2",
+    "file": "fonts/PPNeueMachina-PlainUltraboldItalic.woff2",
     "src": "assets/fonts/PPNeueMachina-PlainUltraboldItalic.woff2"
   },
   "assets/fonts/space-grotesk-v22-latin-300.woff2": {
-    "file": "assets/space-grotesk-v22-latin-300-DiSf0yqz.woff2",
+    "file": "fonts/space-grotesk-v22-latin-300.woff2",
     "src": "assets/fonts/space-grotesk-v22-latin-300.woff2"
   },
   "assets/fonts/space-grotesk-v22-latin-500.woff2": {
-    "file": "assets/space-grotesk-v22-latin-500-lFbtlQH6.woff2",
+    "file": "fonts/space-grotesk-v22-latin-500.woff2",
     "src": "assets/fonts/space-grotesk-v22-latin-500.woff2"
   },
   "assets/fonts/space-grotesk-v22-latin-600.woff2": {
-    "file": "assets/space-grotesk-v22-latin-600-DjKNqYRj.woff2",
+    "file": "fonts/space-grotesk-v22-latin-600.woff2",
     "src": "assets/fonts/space-grotesk-v22-latin-600.woff2"
   },
   "assets/fonts/space-grotesk-v22-latin-700.woff2": {
-    "file": "assets/space-grotesk-v22-latin-700-RjhwGPKo.woff2",
+    "file": "fonts/space-grotesk-v22-latin-700.woff2",
     "src": "assets/fonts/space-grotesk-v22-latin-700.woff2"
   },
   "assets/fonts/space-grotesk-v22-latin-regular.woff2": {
-    "file": "assets/space-grotesk-v22-latin-regular-CJ-V5oYT.woff2",
+    "file": "fonts/space-grotesk-v22-latin-regular.woff2",
     "src": "assets/fonts/space-grotesk-v22-latin-regular.woff2"
   },
   "assets/js/app.js": {
-    "file": "assets/app-CIgV_4f7.js",
+    "file": "assets/app-BKbl-I3E.js",
     "name": "app",
     "src": "assets/js/app.js",
     "isEntry": true

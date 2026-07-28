@@ -1,4 +1,4 @@
-function initVoteButtons() {
+export function initVoteButtons() {
   document.querySelectorAll("[data-vote-button]").forEach((button) => {
     button.addEventListener("click", async () => {
       button.disabled = true;

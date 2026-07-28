@@ -1,6 +1,6 @@
 import kjua from "kjua";
 
-function initSocialShare() {
+export function initSocialShare() {
   document.querySelectorAll('[data-social-share]').forEach(root => {
     if (root._socialShareBound) return;
     root._socialShareBound = true;
@@ -59,7 +59,7 @@ function initSocialShare() {
       back: "#FFFFFF",
       rounded: 0,
     });
-    console.log(svg);
+
     // Let CSS control sizing
     svg.removeAttribute("width");
     svg.removeAttribute("height");
@@ -67,13 +67,11 @@ function initSocialShare() {
 
     // Insert into canvas (or multiple if needed)
     QRcode.querySelectorAll("[data-social-qr-canvas]").forEach((placeholder, i) => {
-      const node = i === 0 ? svg : svg.cloneNode(true);
-      placeholder.appendChild(node);
+      if(placeholder.dataset.socialQrCanvas != 'init'){
+        const node = i === 0 ? svg : svg.cloneNode(true);
+        placeholder.appendChild(node);
+        placeholder.dataset.socialQrCanvas = "init";
+      }
     });
   }
 }
-
-// Initialize Social Share
-document.addEventListener('DOMContentLoaded', () => {
-  initSocialShare();
-});

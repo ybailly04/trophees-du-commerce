@@ -11,10 +11,37 @@ tabs:
           fields:
             type: fields
             fields:
+              layout:
+                type: layout
+                layouts:
+                  - "1/1"
+                  - "1/2, 1/2"
+                  - "1/3, 2/3"
+                  - "2/3, 1/3"
+                fieldsets:
+                  - heading
+                  - text
+                  - largeText
+                  - image
+                  - faq
       sidebar:
         width: 1/3
         sections:
-          
+          sideContent:
+            type: fields
+            fields:
+              toggleHeader:
+                label: Afficher header
+                type: toggle
+                text:
+                  - "non"
+                  - "oui"
+              imageHeader:
+                type: files
+                multiple: false
+              intro:
+                type: text
+
 
 
   seo:

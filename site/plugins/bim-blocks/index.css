@@ -1,0 +1,11 @@
+/* FAQ */
+.k-block-type-faq-heading{
+    margin: .5rem 0;
+}
+.k-block-type-faq-item + *{
+    margin-top: .5rem;
+}
+
+.k-block-type-largeText{
+    font-size: 1.3em;
+}

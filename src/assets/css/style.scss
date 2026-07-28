@@ -30,11 +30,11 @@
 @use "templates/categories";
 @use "templates/candidate";
 @use "templates/form";
+@use "templates/default";
 
-@use "flexibles/flex-paragraphe";
-@use "flexibles/flex-objets";
-@use "flexibles/flex-showroom";
-@use "flexibles/flex-images";
-@use "flexibles/flex-process";
-@use "flexibles/flex-video";
-@use "flexibles/flex-texteimage";
+@use "blocks/text";
+@use "blocks/layout";
+@use "blocks/faq";
+@use "blocks/image";
+@use "blocks/largeText";
+@use "blocks/heading";

@@ -2,11 +2,39 @@ Title: Foire aux questions
 
 ----
 
+Layout: [{"attrs":[],"columns":[{"blocks":[{"content":{"level":"h1","text":"Foire aux<br>questions"},"id":"8a697277-5b56-41a7-8c48-b650e3ff7f4f","isHidden":false,"type":"heading"},{"content":{"text":"<p><a href=\"mailto:info@tropheducommerce.fr\">info@tropheducommerce.fr</a></p>"},"id":"49f043ac-b157-41b2-9394-5ed92a9a41da","isHidden":false,"type":"text"}],"id":"65e576d4-3fdf-4a9d-8153-e64585c7933a","width":"1/2"},{"blocks":[{"content":{"faq":[{"question":"Les Trophées du Commerce, c'est quoi ?","answer":"<p>Le site mywebsite.com est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Dracula, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention.</p>"},{"question":"Qui peut participer ?","answer":"<p>Le site mywebsite.com est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Dracula, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention.</p>"},{"question":"Qu'est-ce qu'on gagne ?","answer":"<p>Le site mywebsite.com est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Dracula, qui s'efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l'intervention.</p>"}]},"id":"2dce9c5b-cc29-4c1e-8b53-9b0cd0758784","isHidden":false,"type":"faq"}],"id":"f2be03c1-3a41-4ebf-8564-f5be3b657077","width":"1/2"}],"id":"e1931389-05e9-4af4-8f3e-c5388fca1dbc"}]
+
+----
+
+Toggleheader: false
+
+----
+
+Imageheader: 
+
+----
+
+Intro: 
+
+----
+
 Seotitle: 
 
 ----
 
 Seodescription: 
+
+----
+
+Toggle: true
+
+----
+
+Blocks: [{"content":{"level":"h2","text":"La fête du commerce"},"id":"713a715c-64d3-4dd6-8186-c364c9a0066e","isHidden":false,"type":"heading"},{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},"id":"6a2af329-a94e-4863-bdb4-856b0bb6514e","isHidden":false,"type":"text"}]
+
+----
+
+Content: [{"content":{"level":"h2","text":"La fête<br>du commerce"},"id":"4948eb23-2387-4b91-89fd-d806d5800432","isHidden":false,"type":"heading"},{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},"id":"a04fe337-7e86-4f69-9a52-84600fb8d34d","isHidden":false,"type":"text"}]
 
 ----
 

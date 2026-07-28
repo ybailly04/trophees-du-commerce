@@ -18,25 +18,40 @@
         align-items: center;
         justify-content: space-between;
 
+        @media #{$md} {
+            padding: 8em 0 0 0;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
         &-svg{
             pointer-events: none;
             position: absolute;
             top: 2em;
             left: 4em;
             width: calc(100% - 8em);
+
+            @media #{$md} {
+                left: 1.5em;
+                width: calc(100% - 3em);
+            }
         }
     }
 
     &-menu{
         color: $bordeaux;
         font-family: $font-secondary;
-        background-color: $white;
+        background-color: $beige;
         border-radius: 6px;
         padding: 1.25rem 1.5rem;
         display: flex;
         align-items: flex-end;
         gap: 1em;
         line-height: .8;
+
+        @media #{$md} {
+            padding: .75rem .5rem;
+        }
 
         &-title{
             display: block;
@@ -61,6 +76,9 @@
         color: $color-main;
         font-weight: 500;
         max-width: 26em;
+        @media #{$md} {
+            display: none;
+        }
     }
 
     &-center{
@@ -78,6 +96,7 @@
             text-align: center;
             max-width: 12em;
             margin-top: 0;
+            color: $beige;
         }
     }
 
@@ -86,6 +105,16 @@
         align-items: center;
         justify-content: center;
         gap: 2em;
+        @media #{$md} {
+            flex-direction: column;
+            gap: .5em;
+        }
+
+        > *{
+            @media #{$md} {
+                min-width: 12rem;
+            }
+        }
     }
     
     &-grid{
@@ -108,10 +137,19 @@
         justify-content: space-between;
         padding-bottom: 2em;
         gap: 8em;
+        @media #{$sm} {
+            gap: 1em;
+            flex-direction: column;
+
+        }
 
         &-svg{
             width: 100%;
             height: auto;
+            display: block;
+            @media #{$sm} {
+                height: auto;
+            }
         }
     }
 
@@ -119,6 +157,11 @@
         flex-shrink: 0;
         width: 20%;
         color: $white;
+        @media #{$sm} {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
         &-title{
             text-transform: uppercase;
             margin: 0 0 .5em 0;
@@ -128,6 +171,9 @@
             flex-direction: column;
             font-size: 2em;
             font-family: $font-secondary;
+            @media #{$sm} {
+                flex-direction: row;
+            }
         }
     }
 

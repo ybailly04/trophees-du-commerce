@@ -3,6 +3,11 @@ import { CustomEase } from "gsap/all";
 import barba from '@barba/core';
 
 import { HeaderManager } from "./header";
+import { initSocialShare } from "./share.js";
+import { initAccordionCSS } from "./accordion.js";
+import { initVoteButtons } from "./vote.js";
+import { bfi_init } from '../../../../node_modules/better-file-input/dist/bfi.js';
+import { CursorManager } from "./cursor.js";
 
 // -----------------------------------------
 // OSMO PAGE TRANSITION BOILERPLATE
@@ -38,6 +43,7 @@ gsap.defaults({ ease: "osmo", duration: durationDefault });
 
 let header = document.querySelector('.header');
 let headerManager = new HeaderManager(header);
+let cursorManager = new CursorManager();
 
 
 // -----------------------------------------
@@ -51,7 +57,10 @@ function initOnceFunctions() {
   onceFunctionsInitialized = true;
   
   // Runs once on first load
-  // if (has('[data-something]')) initSomething();
+  initSocialShare();
+  if(has('.bfi')) bfi_init();
+  if(has('[data-accordion-css-init]')) initAccordionCSS();
+  if(has['[data-vote-button]']) initVoteButtons();
 }
 
 function initBeforeEnterFunctions(next) {
@@ -68,7 +77,16 @@ function initAfterEnterFunctions(next) {
   // Runs after enter animation completes
   // if (has('[data-something]')) initSomething();
   
-  
+  headerManager.initBurgers();
+  initSocialShare();
+  if(has('.bfi')) bfi_init();
+  if(has('[data-accordion-css-init]')) initAccordionCSS();
+  if(has['[data-vote-button]']) initVoteButtons();
+
+  if(cursorManager){
+    cursorManager.C.removeText();
+  }
+
   if(hasLenis){
     lenis.resize();
   }

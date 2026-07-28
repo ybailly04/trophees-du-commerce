@@ -51,8 +51,8 @@
         <a href="<?= $candidate->url() ?>">
           <?php if ($logo = $candidate->logo()->toFile()): ?>
             <img class="category-logo" src="<?= $logo->url() ?>" alt="<?= $candidate->title() ?>" data-cursor-text="<?= $candidate->title() ?>">
-          <?php else: ?>
-            <div class="category-list-title"><?= $candidate->title() ?></div>
+            <?php else: ?>
+            <img class="category-logo" src="<?= $site->image('logo.svg')->url(); ?>" alt="<?= $candidate->title() ?>" data-cursor-text="<?= $candidate->title() ?>">
           <?php endif ?>
         </a>
         <a class="category-link" href="<?= $candidate->url() ?>">En savoir plus</a>
