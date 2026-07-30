@@ -49,4 +49,9 @@ Icon
 
 /site/config/.license
 
+# SMTP credentials
+# ---------------
+
+/site/config/config.smtp.php
+
 node_modules/

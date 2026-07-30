@@ -1,0 +1,14 @@
+<?php
+
+// Copier ce fichier en "config.smtp.php" et renseigner les vrais identifiants.
+// config.smtp.php est ignoré par git (voir .gitignore) pour ne jamais exposer le mot de passe.
+
+return [
+    'host'     => 'smtp.example.com',
+    'port'     => 465,
+    'security' => 'ssl', // 'ssl' ou 'tls'
+    'username' => 'user@example.com',
+    'password' => 'changeme',
+    'from'     => 'user@example.com',
+    'fromName' => 'Trophées du Commerce',
+];

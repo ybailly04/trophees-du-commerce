@@ -23,6 +23,7 @@ tabs:
                   - text
                   - largeText
                   - image
+                  - gallery
                   - faq
       sidebar:
         width: 1/3

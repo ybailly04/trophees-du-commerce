@@ -1,5 +1,6 @@
 export function initVoteButtons() {
   document.querySelectorAll("[data-vote-button]").forEach((button) => {
+    console.log('test');
     button.addEventListener("click", async () => {
       button.disabled = true;
 
@@ -14,22 +15,17 @@ export function initVoteButtons() {
 
         if (!response.ok) {
           if (response.status === 409) {
-            button.textContent = `Déjà voté (${button.querySelector("[data-vote-count]")?.textContent ?? ""})`;
+            button.textContent = `Déjà voté`;
             return;
           }
           throw new Error(data.error || "Erreur lors du vote.");
+        }else{
+          button.textContent = `Déjà voté`;
         }
 
-        const countEl = button.querySelector("[data-vote-count]");
-        if (countEl) countEl.textContent = data.count;
       } catch (error) {
         button.disabled = false;
-        alert(error.message);
       }
     });
   });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  initVoteButtons();
-});

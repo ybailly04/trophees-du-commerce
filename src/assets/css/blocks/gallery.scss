@@ -1,0 +1,22 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.block-type-gallery{
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1.5em;
+        flex-wrap: wrap;
+    }
+
+    .block-image-svg{
+        padding: 2rem;
+        width: 12rem;
+        height: auto;
+        object-fit: content;
+    }
+}

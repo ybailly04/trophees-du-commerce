@@ -60,7 +60,7 @@ function initOnceFunctions() {
   initSocialShare();
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
-  if(has['[data-vote-button]']) initVoteButtons();
+  if(has('[data-vote-button]')) initVoteButtons();
 }
 
 function initBeforeEnterFunctions(next) {
@@ -81,7 +81,7 @@ function initAfterEnterFunctions(next) {
   initSocialShare();
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
-  if(has['[data-vote-button]']) initVoteButtons();
+  if(has('[data-vote-button]')) initVoteButtons();
 
   if(cursorManager){
     cursorManager.C.removeText();
@@ -202,7 +202,7 @@ barba.hooks.afterEnter(data => {
 });
 
 barba.init({
-  debug: true, // Set to 'false' in production
+  debug: false, // Set to 'false' in production
   timeout: 7000,
   preventRunning: true,
   transitions: [

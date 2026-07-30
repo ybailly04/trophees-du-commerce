@@ -18,19 +18,19 @@ Description: Bistrot de quartier au bord du Thiou, cuisine de saison faite maiso
 
 ----
 
-Galery:
+Galery: 
 
 ----
 
-Count: 0
+Count: 3
 
 ----
 
-Logo:
+Logo: 
 
 ----
 
-Image:
+Image: 
 
 ----
 

@@ -9,6 +9,7 @@ Kirby::plugin('bim/bim-blocks', [
   'snippets' => [
     'blocks/faq' => __DIR__ . '/snippets/blocks/faq.php',
     'blocks/image' => __DIR__ . '/snippets/blocks/image.php',
+    'blocks/gallery' => __DIR__ . '/snippets/blocks/gallery.php',
     'blocks/largeText' => __DIR__ . '/snippets/blocks/largeText.php',
     // more snippets
   ],

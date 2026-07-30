@@ -22,7 +22,7 @@ Galery:
 
 ----
 
-Count: 0
+Count: 2
 
 ----
 

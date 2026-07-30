@@ -1,7 +1,44 @@
 <?php
 
+$smtp = include __DIR__ . '/config.smtp.php';
+
 return [
     'debug'  => true,
+    'email'  => [
+        'transport' => [
+            'type'     => 'smtp',
+            'host'     => $smtp['host'],
+            'port'     => $smtp['port'],
+            'security' => $smtp['security'],
+            'auth'     => true,
+            'username' => $smtp['username'],
+            'password' => $smtp['password'],
+        ],
+        'from'     => $smtp['from'],
+        'fromName' => $smtp['fromName'],
+    ],
+    'hooks' => [
+        'page.changeStatus:after' => function ($newPage, $oldPage) {
+            if ($newPage->intendedTemplate()->name() !== 'candidate') {
+                return;
+            }
+
+            $wasDraft       = $oldPage->status() === 'draft';
+            $isNowPublished = $newPage->status() === 'listed';
+
+            if ($wasDraft && $isNowPublished) {
+                try {
+                    kirby()->email([
+                        'to'      => 'yann@bimagency.fr',
+                        'subject' => 'Votre inscription ' . $newPage->title() . " a bien été validée !",
+                        'body'    => "Votre inscription pour \"{$newPage->title()}\" a bien été validée et est disponible sur le site à l'adresse " . $newPage->url() .". \n Bonne chance !",
+                    ]);
+                } catch (\Throwable $e) {
+                    error_log('Erreur envoi email publication candidat : ' . $e->getMessage());
+                }
+            }
+        },
+    ],
     'routes' => [
         [
             'pattern' => 'candidature/submit',
@@ -147,6 +184,27 @@ return [
 
                 return Response::json(['count' => $count]);
             }
+        ],
+        [
+            'pattern' => 'sitemap.xml',
+            'action'  => function() {
+                $pages = site()->pages()->index();
+
+                // fetch the pages to ignore from the config settings,
+                // if nothing is set, we ignore the error page
+                $ignore = kirby()->option('sitemap.ignore', ['error']);
+
+                $content = snippet('sitemap', compact('pages', 'ignore'), true);
+
+                // return response with correct header type
+                return new Kirby\Cms\Response($content, 'application/xml');
+            }
+        ],
+        [
+            'pattern' => 'sitemap',
+            'action'  => function() {
+                return go('sitemap.xml', 301);
+            }
         ]
     ],
     'timnarr.imagex' => [
@@ -184,6 +242,12 @@ return [
                 '1200w' => ['width' => 1200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
                 '1400w' => ['width' => 1400, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ],
+            'gallery' => [
+                '200w' => ['width' => 200, 'quality' => 80],
+            ],
+            'gallery-webp' => [
+                '200w'  => ['width' =>  200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+            ]
         ]
     ]
 ];
