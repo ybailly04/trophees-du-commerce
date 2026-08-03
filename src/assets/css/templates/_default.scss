@@ -13,13 +13,13 @@
 
     &-header{
         width: 100%;
-        aspect-ratio: 16/9;
+        height: 100svh;
         display: grid;
         place-items: center;
         padding: 1.5em 4em;
+        position: relative;
         @media #{$md} {
             aspect-ratio: initial;
-            height: 100lvh;
             padding: 1.5em;
         }
 

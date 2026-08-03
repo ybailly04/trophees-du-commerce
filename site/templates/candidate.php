@@ -80,16 +80,39 @@
       </div>
 
       <div class="candidate-right">
+        <div class="candidate-right-thumbs">
+          <?php
+            $images =  $page->galery()->toFiles();
+            foreach($images as $image): 
+                $thumb_options = [
+                  'image' => $image,
+                  'srcset' => 'thumb',
+                  'ratio' => '5/7',
+                  'loading' => 'eager',
+                  'attributes' => [
+                    'picture' => [
+                      'class' => ['candidate-right-thumb'],
+                      'data-index' =>  $image->id(),
+                      'data-gallery-thumb'
+                    ]
+                  ]
+                ];
+            ?>
+              <?php snippet('imagex-picture', $thumb_options) ?>
+          <?php endforeach ?> 
+        </div>
         <a href="<?= page("/categories")->url() ?>" class="candidate-right-back button-secondary">
             <?= asset('/src/assets/icons/arrow-left.svg')->read() ?>
             <span class="button-inner">
                 <span class="button-text">Retour aux catégories</span>
             </span>
         </a>
+        <div class="candidate-right-images">
           <?php $options = [
               'image' => $page->image() ? $page->image() : $site->image('placeholder.png'),
               'srcset' => 'half',
               'ratio' => '24/31',
+              'loading' => 'eager',
               'attributes' => [
                 'picture' => [
                   'class' => ['candidate-right-image'],
@@ -98,6 +121,25 @@
             ]; ?>
 
           <?php snippet('imagex-picture', $options) ?>
+        <?php
+            $images =  $page->galery()->toFiles();
+            foreach($images as $image): 
+                $options = [
+                  'image' => $image,
+                  'srcset' => 'half',
+                  'ratio' => '24/31',
+                  'loading' => 'eager',
+                  'attributes' => [
+                    'picture' => [
+                      'class' => ['candidate-right-image'],
+                      'data-gallery-index' => $image->id(),
+                    ]
+                  ]
+                ];
+            ?>
+              <?php snippet('imagex-picture', $options) ?>
+          <?php endforeach ?> 
+        </div>
       </div>
     </div>
 

@@ -82,8 +82,8 @@
         }
 
         &:disabled{
-            background-color: $black;
-            color: $color-main;
+            background-color: $beige-light;
+            color: $bordeaux-light;
         }
     }
 
@@ -234,11 +234,11 @@
                 display: none;
             }
             @media #{$xs} {
-                top: 1;
+                top: 12em;
             }
         }
 
-        &-image{
+        &-images{
             width: 100%;
             height: 100lvh;
             display: block;
@@ -257,6 +257,39 @@
                 height: 100%;
                 object-fit: cover;
             }
+        }
+
+        &-image{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+
+            &:not(:first-of-type){
+                clip-path: inset(100% 0),
+            }
+
+            @for $i from 1 through 10 {
+                &:nth-child(10n + #{$i}) {
+                    z-index: -1 * $i;
+                }
+            }
+
+        }
+
+        &-thumbs{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            position: absolute;
+            left: 0;
+            top:  6rem;
+            z-index: 2;
+            transform: translateX(calc(-100% - .5rem));
+        }
+        &-thumb{
+            cursor: pointer;
         }
     }
 

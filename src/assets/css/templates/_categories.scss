@@ -71,9 +71,9 @@
     }
 
     &-link{
-        background-color: $beige;
+        background-color: $orange;
         text-transform: uppercase;
-        color: $orange;
+        color: $beige;
         border-radius: 6px;
         padding: .5em 2em;
         text-align: center;
@@ -92,9 +92,11 @@
         font-weight: 500;
         font-size: .9em;
         font-family: $font;
+        transition: color $ts-smooth, background $ts-smooth;
 
         &:disabled{
-            background-color: $black;
+            background-color: $beige-light;
+            color: $bordeaux-light;
         }
     }
 

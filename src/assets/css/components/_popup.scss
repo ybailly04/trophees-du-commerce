@@ -35,12 +35,12 @@
 
 	&-content {
 		position: absolute;
-		top: 1rem;
-		right: 1rem;
+		top: 1.5rem;
+		right: 1.5rem;
 		z-index: 1;
-		padding: .5rem 2rem;
+		padding: 0;
 		width: calc(min(40vw, 500px));
-		height: calc((100dvh - 4rem));
+		height: calc((100svh - 2rem));
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
@@ -168,11 +168,12 @@
 		background-color: $beige;
 		cursor: pointer;
 		border-radius: 6px;
-		padding: .5em 1em;
+		padding: 1em 1.5em;
 		text-transform: uppercase;
 		color: currentColor;
 		font-family: $font-secondary;
-		color: $bordeaux;
+		color: $beige;
+		background-color: $bordeaux;
 		&:hover{
 			svg{
 				transform: rotate(180deg) scale(0.8);
@@ -182,8 +183,8 @@
 		svg {
 			position: relative;
 			display: block;
-			fill: $black;
-			stroke: $black;
+			fill: $beige;
+			stroke: $beige;
 			transition: transform $ts-smooth;
 			pointer-events: none;
 			margin: 0 0 0 .5em;
@@ -199,8 +200,8 @@
 		color: $color-main;
 		border-radius: 12px;
 		padding: 2em;
-		width: 100%;
-		height: 20%;
+		width: 50%;
+		height: 100%;
 		text-decoration: none;
 		overflow: hidden;
 		transition: color $ts-smooth;
@@ -214,8 +215,6 @@
 			font-weight: 500;
 			text-transform: uppercase;
 			font-family: $font-secondary;
-			font-size: 2em;
-			max-width: 50%;
 			transition: color $ts-smooth;
 		}
 
@@ -234,6 +233,61 @@
 			height: 100%;
 			object-fit: cover;
 			opacity: .15;
+		}
+	}
+
+	&-bottom{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: .5em;
+		width: 100%;
+		height: 20%;
+	}
+
+	&-bim{
+		height: 100%;
+		width: 50%;
+		background-color: $black;
+		position: relative;
+		overflow: hidden;
+		border-radius: 12px;
+		color: $white;
+		padding: 2em;
+		text-decoration: none;
+
+		&-text{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			z-index: 2;
+			font-family: $font-secondary;
+			transition: color $ts-smooth;
+			color: $beige;
+
+			span:last-of-type(){
+				text-transform: uppercase;
+			}
+		}
+
+		&:hover{
+			.popup-bim-image{
+				transform: translateX(-50%) translateY(30%);
+			}
+			.popup-bim-text{
+				color: $color-main;
+			}
+			
+		}
+
+		&-image{
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%) translateY(75%);
+			width: 40%;
+			height: auto;
+			transition: transform $ts-smooth;
 		}
 	}
 }

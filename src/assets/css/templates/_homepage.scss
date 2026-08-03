@@ -2,7 +2,7 @@
 @use "../mixins" as *;
 
 .homepage {
-    height: 100lvh;
+    height: 100svh;
     position: relative;
     
     &-container{
@@ -30,6 +30,12 @@
             top: 2em;
             left: 4em;
             width: calc(100% - 8em);
+
+            @media #{$lg} {
+                top: 1.5em;
+                left: 2em;
+                width: calc(100% - 4em);
+            }
 
             @media #{$md} {
                 left: 1.5em;
@@ -132,14 +138,13 @@
 
     &-bottom{
         width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: .2fr .8fr;
         padding-bottom: 2em;
         gap: 8em;
         @media #{$sm} {
             gap: 1em;
-            flex-direction: column;
+            grid-template-columns: 1fr;
 
         }
 
@@ -147,6 +152,7 @@
             width: 100%;
             height: auto;
             display: block;
+            justify-self: flex-end;
             @media #{$sm} {
                 height: auto;
             }
@@ -155,8 +161,8 @@
 
     &-dates{
         flex-shrink: 0;
-        width: 20%;
         color: $white;
+        align-self: flex-end;
         @media #{$sm} {
             display: flex;
             flex-direction: column;

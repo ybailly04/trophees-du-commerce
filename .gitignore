@@ -54,4 +54,10 @@ Icon
 
 /site/config/config.smtp.php
 
+## Content
+/content/*
+/site/config/vite.config.php
+
 node_modules/
+
+content/

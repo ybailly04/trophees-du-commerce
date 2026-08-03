@@ -1,9 +1,0 @@
-Title: Error
-
-----
-
-Text: Une erreur est survenue sur le site
-
-----
-
-Uuid: nd8endij2b6npf6x

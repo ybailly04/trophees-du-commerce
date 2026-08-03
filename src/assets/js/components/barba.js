@@ -6,6 +6,7 @@ import { HeaderManager } from "./header";
 import { initSocialShare } from "./share.js";
 import { initAccordionCSS } from "./accordion.js";
 import { initVoteButtons } from "./vote.js";
+import { initGallery } from "./gallery.js";
 import { bfi_init } from '../../../../node_modules/better-file-input/dist/bfi.js';
 import { CursorManager } from "./cursor.js";
 
@@ -61,6 +62,7 @@ function initOnceFunctions() {
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
+  if(has('[data-gallery-thumb]')) initGallery();
 }
 
 function initBeforeEnterFunctions(next) {
@@ -82,6 +84,7 @@ function initAfterEnterFunctions(next) {
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
+  if(has('[data-gallery-thumb]')) initGallery();
 
   if(cursorManager){
     cursorManager.C.removeText();

@@ -10,16 +10,18 @@ $fw-regular: 300;
 // ==========================================
 // Colors
 // ==========================================
-$black: #1f1715;
+$black: #282828;
 $gray-dark: #50555d;
-$gray: #62594c;
-$gray-light: #c9c9ce;
+$gray: #535353;
+$gray-light: #A9A9A9;
 $gray-lime: #f0f0f0;
 $white: #FFF;
 $brown: #62594c;
 $maroon: #411f15;
 $beige: #F7F1DA;
+$beige-light: #FAD0B0;
 $bordeaux: #782D3E;
+$bordeaux-light: #b97E77;
 $orange: #F6A262;
 $blue: #A8EDFB;
 $color-main: #F24F43;
@@ -51,7 +53,7 @@ $sm: "screen and (max-width: 765px)";
 $sm-min: "screen and (min-width: 766px)";
 $md: "screen and (max-width: 992px)";
 $md-min: "screen and (min-width: 993px)";
-$lg: "screen and (max-width: 1280px)";
-$lg-min: "screen and (min-width: 1281px)";
+$lg: "screen and (max-width: 1440px)";
+$lg-min: "screen and (min-width: 1440px)";
 $xlg: "screen and (max-width: 1920px)";
 $xlg-min: "screen and (min-width: 1920px)";

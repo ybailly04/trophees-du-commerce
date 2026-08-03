@@ -29,9 +29,13 @@ return [
             if ($wasDraft && $isNowPublished) {
                 try {
                     kirby()->email([
-                        'to'      => 'yann@bimagency.fr',
-                        'subject' => 'Votre inscription ' . $newPage->title() . " a bien été validée !",
-                        'body'    => "Votre inscription pour \"{$newPage->title()}\" a bien été validée et est disponible sur le site à l'adresse " . $newPage->url() .". \n Bonne chance !",
+                        'from'     => option('email.from'),
+                        'fromName' => option('email.fromName'),
+                        'to'       => $newPage->email(),
+                        'subject'  => $site->objMail()->value(),
+                        'body'     => [
+                            'html' => str_replace('{link}', $newPage->url(), $site->mailValid()->value()),
+                        ],
                     ]);
                 } catch (\Throwable $e) {
                     error_log('Erreur envoi email publication candidat : ' . $e->getMessage());
@@ -50,6 +54,11 @@ return [
                 }
 
                 $errors = [];
+
+                $dateInscriptions = site()->dateInscriptions()->toDate('U');
+                if ($dateInscriptions && time() > $dateInscriptions) {
+                    $errors[] = 'La période d\'inscription est terminée.';
+                }
 
                 if (empty(trim(get('title', '')))) {
                     $errors[] = 'Le nom de l\'établissement est requis.';
@@ -158,6 +167,11 @@ return [
                     return Response::json(['error' => 'Jeton de sécurité invalide.'], 403);
                 }
 
+                $dateVotes = site()->dateVotes()->toDate('U');
+                if ($dateVotes && time() > $dateVotes) {
+                    return Response::json(['error' => 'La période de vote est terminée.'], 403);
+                }
+
                 $page = site()->find($id);
 
                 if (!$page || $page->intendedTemplate()->name() !== 'candidate') {
@@ -243,10 +257,16 @@ return [
                 '1400w' => ['width' => 1400, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ],
             'gallery' => [
-                '200w' => ['width' => 200, 'quality' => 80],
+                '200w' => ['width' => 200, 'crop' => true, 'quality' => 80],
             ],
             'gallery-webp' => [
                 '200w'  => ['width' =>  200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+            ],
+            'thumb' => [
+                '65w' => ['width' => 65, 'crop' => true, 'quality' => 80],
+            ],
+            'thumb-webp' => [
+                '200w'  => ['width' => 65, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ]
         ]
     ]

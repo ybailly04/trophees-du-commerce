@@ -1,41 +1,63 @@
 title: Site
 
-columns:
-    main:
-      width: 2/3
-      sections:
-        pages:
-          type: pages
-        candidates:
-          type: pages
-          label: Candidats en attente
-          layout: cards
-          template: candidate
-          query: site.find('candidates').drafts
-    sidebar:
-      width: 1/3
-      sections:
-        fields:
-          type: fields
+tabs:
+  content:
+    label: Contenu
+    icon: text
+    columns:
+      main:
+        width: 2/3
+        sections:
+          pages:
+            type: pages
+          candidates:
+            type: pages
+            label: Candidats en attente
+            layout: cards
+            template: candidate
+            query: site.find('candidates').drafts
+      sidebar:
+        width: 1/3
+        sections:
           fields:
-            menus:
-              type: structure
-              fields:
-                menuHeadline:
-                  type: text
-                  label: Nom du menu
-                menu:
-                  type: structure
-                  fields:
-                    link:
-                      type: link
-                      label: Lien
-                    linkText:
-                      type: text
-                      label: Texte du lien
-                    target:
-                      type: toggle
-                      text: Ouvrir dans une nouvelle fenêtre
-            menuText:
-              type: writer
-              label: Texte du menu
+            type: fields
+            fields:
+              menus:
+                type: structure
+                fields:
+                  menuHeadline:
+                    type: text
+                    label: Nom du menu
+                  menu:
+                    type: structure
+                    fields:
+                      link:
+                        type: link
+                        label: Lien
+                      linkText:
+                        type: text
+                        label: Texte du lien
+                      target:
+                        type: toggle
+                        text: Ouvrir dans une nouvelle fenêtre
+              menuText:
+                type: writer
+                label: Texte du menu
+              dateInscriptions:
+                type: date
+                label: Date limite des inscriptions
+                time: true
+              dateVotes:
+                type: date
+                label: Date limite des votes
+                time: true
+  mails:
+    label: Mailing
+    icon: search
+    fields:
+      objMail:
+        type: text
+        label: Objet du mail de validation
+      mailValid:
+        type: writer
+        label: Mail de confirmation

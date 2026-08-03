@@ -1,5 +1,0 @@
-Uuid: ekg42imr8rjikqdi
-
-----
-
-Template: blocks/image
