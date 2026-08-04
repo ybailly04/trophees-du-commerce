@@ -5,6 +5,7 @@ import "./components/svg-icons.js";
 import "./components/sliders.js";
 import "./components/animation.js";
 import "./components/vote.js";
+import "./components/search.js";
 import "./components/barba.js";
 import { ScrollManager } from "./components/scroll.js";
 import { CursorManager } from "./components/cursor.js";

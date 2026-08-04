@@ -57,16 +57,18 @@
             </div>
             <div class="candidate-tabs-content">
               <div class="candidate-tabs-desc" id="content-desc"><?= $page->description() ?></div>
-              <div class="candidate-tabs-contact" id="content-contact"><?= $page->adress() ?></div>
+              <div class="candidate-tabs-contact" id="content-contact">
+                <?= $page->adress() ?>
+                <div class="candidate-links">
+                  <?php if($page->website()): ?>
+                    <a href="<?= $page->website() ?>" class="candidate-links-link" target="_blank">Website</a>
+                  <?php endif; ?>
+                  <?php if($page->phone()): ?>
+                    <a href="tel:<?= $page->phone() ?>" class="candidate-links-link" target="_blank"><?= $page->phone() ?></a>
+                  <?php endif; ?>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="candidate-links">
-          <?php if($page->website()): ?>
-            <a href="<?= $page->website() ?>" class="candidate-links-link" target="_blank">Website</a>
-          <?php endif; ?>
-          <?php if($page->phone()): ?>
-            <a href="tel:<?= $page->phone() ?>" class="candidate-links-link" target="_blank"><?= $page->phone() ?></a>
-          <?php endif; ?>
         </div>
         <div data-social-share-title="Trophées du Commerce - Vote pour <?= $page->title() ?>" data-social-share="" data-social-share-link="<?= $page->url() ?>" class="candidate-socials social-share">
           <button type="button" data-social-share-type="print" aria-label="Imprimer" class="social-share__button"><i class="social-share__icon">
@@ -140,6 +142,46 @@
               <?php snippet('imagex-picture', $options) ?>
           <?php endforeach ?> 
         </div>
+        <?php if (!empty($images)): ?>
+          <div class="candidate-right-slider swiper" data-swiper>
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <?php $options = [
+                      'image' => $page->image() ? $page->image() : $site->image('placeholder.png'),
+                      'srcset' => 'default',
+                      'ratio' => '5/3',
+                      'loading' => 'eager',
+                      'attributes' => [
+                        'picture' => [
+                          'class' => ['candidate-right-image'],
+                        ]
+                      ]
+                    ]; ?>
+                  <?php snippet('imagex-picture', $options) ?>
+                </div>
+                <?php foreach($images as $image): 
+                      $options = [
+                      'image' => $image,
+                      'srcset' => 'default',
+                      'ratio' => '5/3',
+                      'loading' => 'eager',
+                      'attributes' => [
+                        'picture' => [
+                          'class' => ['candidate-right-image'],
+                        ]
+                      ]
+                    ];
+                ?>
+                  <div class="swiper-slide">
+                    <?php snippet('imagex-picture', $options) ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+              <!-- If we need pagination -->
+              <div class="candidate-right-pagination swiper-pagination" data-swiper-pagination></div>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
 

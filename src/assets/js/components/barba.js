@@ -9,6 +9,7 @@ import { initVoteButtons } from "./vote.js";
 import { initGallery } from "./gallery.js";
 import { bfi_init } from '../../../../node_modules/better-file-input/dist/bfi.js';
 import { CursorManager } from "./cursor.js";
+import { SliderManager } from "./sliders.js";
 
 // -----------------------------------------
 // OSMO PAGE TRANSITION BOILERPLATE
@@ -28,7 +29,7 @@ const hasScrollTrigger = typeof window.ScrollTrigger !== "undefined";
 const rmMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
 let reducedMotion = rmMQ.matches;
 rmMQ.addEventListener?.("change", e => (reducedMotion = e.matches));
-rmMQ.addListener?.(e => (reducedMotion = e.matches)); 
+rmMQ.addListener?.(e => (reducedMotion = e.matches));
 
 const has = (s) => !!nextPage.querySelector(s);
 
@@ -46,7 +47,6 @@ let header = document.querySelector('.header');
 let headerManager = new HeaderManager(header);
 let cursorManager = new CursorManager();
 
-
 // -----------------------------------------
 // FUNCTION REGISTRY
 // -----------------------------------------
@@ -63,6 +63,10 @@ function initOnceFunctions() {
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
   if(has('[data-gallery-thumb]')) initGallery();
+  if(has('[data-swiper]')){
+    let sliderManager = new SliderManager(document.querySelector('[data-swiper]'));
+    sliderManager.initSlider();
+  }
 }
 
 function initBeforeEnterFunctions(next) {
@@ -85,6 +89,10 @@ function initAfterEnterFunctions(next) {
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
   if(has('[data-gallery-thumb]')) initGallery();
+  if(has('[data-swiper]')){
+    let sliderManager = new SliderManager(document.querySelector('[data-swiper]'));
+    sliderManager.initSlider();
+  }
 
   if(cursorManager){
     cursorManager.C.removeText();

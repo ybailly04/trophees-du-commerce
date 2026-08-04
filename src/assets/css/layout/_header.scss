@@ -32,7 +32,118 @@
     }
 
     &-button {
-        
+
+    }
+
+    &-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border-radius: 6px;
+        padding: 0 1rem;
+
+
+        &-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5em;
+            height: 3.5em;
+            background: none;
+            border: 0;
+            color: $black;
+            cursor: pointer;
+
+            svg {
+                width: 1.4em;
+                height: 1.4em;
+            }
+        }
+
+        &-panel {
+            position: absolute;
+            top: calc(100% + 0.75em);
+            right: 0;
+            width: 20rem;
+            max-width: 90vw;
+            background-color: $white;
+            color: $black;
+            border-radius: 6px;
+            padding: 1em;
+
+            &[hidden] {
+                display: none;
+            }
+        }
+
+        &-input {
+            width: 15rem;
+            max-width: 0;
+            border: 0;
+            background: transparent;
+            font-family: $font;
+            font-size: 1em;
+            padding: 0.5em 0.25em;
+            color: $black;
+            margin: 0;
+            transition: max-width $ts-short;
+
+            &:focus {
+                outline: none;
+                max-width: 15rem;
+            }
+
+            &::placeholder {
+                color: rgba($bordeaux, 0.4);
+            }
+        }
+
+        &-form{
+            margin-bottom: 0;
+        }
+
+        &-results {
+            list-style: none;
+            padding: 0;
+            max-height: 20em;
+            overflow-y: auto;
+            margin: 0;
+            &[hidden] {
+                display: none;
+            }
+        }
+
+        &-result {
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.75em;
+                padding: 0.5em 0.25em;
+                text-decoration: none;
+                color: $black;
+                border-radius: 4px;
+                transition: background-color $ts-short;
+
+                &:hover,
+                &:focus {
+                    background-color: rgba($bordeaux, 0.08);
+                }
+
+                img {
+                    width: 2em;
+                    height: 2em;
+                    object-fit: contain;
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        &-empty {
+            padding: 0.5em 0.25em;
+            color: rgba($black, 0.5);
+            font-size: 0.9em;
+        }
     }
 
     &-right {

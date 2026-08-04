@@ -31,10 +31,10 @@ return [
                     kirby()->email([
                         'from'     => option('email.from'),
                         'fromName' => option('email.fromName'),
-                        'to'       => $newPage->email(),
-                        'subject'  => $site->objMail()->value(),
+                        'to'       => $newPage->email()->value(),
+                        'subject'  => site()->objMail()->value(),
                         'body'     => [
-                            'html' => str_replace('{link}', $newPage->url(), $site->mailValid()->value()),
+                            'html' => str_replace('{link}', $newPage->url(), site()->mailValid()->value()),
                         ],
                     ]);
                 } catch (\Throwable $e) {
@@ -197,6 +197,37 @@ return [
                 Cookie::set('votes', json_encode($votedIds), ['lifetime' => 60 * 24 * 365]);
 
                 return Response::json(['count' => $count]);
+            }
+        ],
+        [
+            'pattern' => 'candidates/search',
+            'method'  => 'GET',
+            'action'  => function () {
+                $query = trim(get('q', ''));
+
+                if (mb_strlen($query) < 2) {
+                    return Response::json(['results' => []]);
+                }
+
+                $candidates = site()->find('candidates')->children()->listed()
+                    ->filter(function ($candidate) use ($query) {
+                        return mb_stripos($candidate->title()->value(), $query) !== false;
+                    })
+                    ->sortBy('title', 'asc')
+                    ->limit(8);
+
+                $results = [];
+                foreach ($candidates as $candidate) {
+                    $logo = $candidate->logo()->toFile();
+
+                    $results[] = [
+                        'title' => $candidate->title()->value(),
+                        'url'   => $candidate->url(),
+                        'logo'  => $logo ? $logo->url() : null,
+                    ];
+                }
+
+                return Response::json(['results' => $results]);
             }
         ],
         [

@@ -4,7 +4,7 @@
     <section class="homepage">
         <span class="homepage-grid"></span>
         <?php if ($video = $page->video()->toFile()): ?>
-            <video class="homepage-video" autoplay muted loop>
+            <video class="homepage-video" autoplay muted loop playsinline>
                 <source src="<?= $video->url() ?>" type="video/mp4">
             </video>
         <?php endif; ?>

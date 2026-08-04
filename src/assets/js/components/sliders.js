@@ -1,29 +1,30 @@
 import Swiper from 'swiper/bundle';
 
-class SliderManager {
+export class SliderManager {
     
     constructor(el){
-        this.next = el.querySelector('.swiper-next')
-        this.prev = el.querySelector('.swiper-prev')
+        this.el = el;
+        this.next = el.querySelector('[data-swiper-next]')
+        this.prev = el.querySelector('[data-swiper-prev]')
+        this.pagination = el.querySelector('[data-swiper-pagination]')
+        this.slider;
+    }
 
-        const swiperAuto = new Swiper(el, {
-            loop: true,
+    initSlider(){
+        this.slider = new Swiper(this.el, {
             slidesPerView: 1,
             spaceBetween: 0,
-            effect: 'fade',
-
-            fadeEffect: {
-                crossFade: true,
-            }, 
 
             navigation: {
                 nextEl: this.next,
                 prevEl: this.prev,
             },
+
+            pagination: {
+                el: this.pagination,
+                type: 'bullets',
+            },
+            
         });
     }
 }
-
-[].forEach.call(document.querySelectorAll('.__slider-auto'), (el) => {
-    new SliderManager(el);
-});
