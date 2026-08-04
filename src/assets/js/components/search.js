@@ -108,6 +108,10 @@ document.querySelectorAll('[data-search]').forEach((wrapper) => {
     if (!panel.hidden && !wrapper.contains(e.target)) closePanel();
   });
 
+  resultsList.addEventListener('click', (e) => {
+    closePanel();
+  })
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !panel.hidden) {
       closePanel();

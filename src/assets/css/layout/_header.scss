@@ -28,6 +28,9 @@
         img {
             width: auto;
             height: 3.5rem;
+            @media #{$sm} {
+                height: 3rem;
+            }
         }
     }
 
@@ -41,7 +44,7 @@
         align-items: center;
         background-color: $white;
         border-radius: 6px;
-        padding: 0 1rem;
+        padding: 0 .5rem;
 
 
         &-toggle {
@@ -71,15 +74,22 @@
             color: $black;
             border-radius: 6px;
             padding: 1em;
+            transition: opacity $ts-smooth, visibility $ts-smooth;
+            opacity: 1;
+            visibility: visible;
+            @media #{$sm} {
+                width: 15rem;
+            }
 
             &[hidden] {
-                display: none;
+                visibility: hidden;
+                opacity: 0;
+                display: block;
             }
         }
 
         &-input {
             width: 15rem;
-            max-width: 0;
             border: 0;
             background: transparent;
             font-family: $font;
@@ -91,7 +101,6 @@
 
             &:focus {
                 outline: none;
-                max-width: 15rem;
             }
 
             &::placeholder {
@@ -123,11 +132,12 @@
                 text-decoration: none;
                 color: $black;
                 border-radius: 4px;
-                transition: background-color $ts-short;
+                font-weight: 400;
+                transition: background-color $ts-short, opacity $ts-smooth;
 
                 &:hover,
                 &:focus {
-                    background-color: rgba($bordeaux, 0.08);
+                    background-color: $blue;
                 }
 
                 img {

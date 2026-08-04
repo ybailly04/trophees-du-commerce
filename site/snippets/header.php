@@ -18,18 +18,6 @@
       </a>
       <div class="header-right">
         <div class="header-search" data-search>
-          <form class="header-search-form" role="search" autocomplete="off" data-search-form>
-            <input
-              type="text"
-              name="q"
-              class="header-search-input"
-              placeholder="TAPEZ VOTRE RECHERCHE"
-              data-search-input
-              aria-label="Rechercher un candidat"
-              aria-autocomplete="list"
-              aria-controls="header-search-results"
-            >
-          </form>
           <button
             type="button"
             class="header-search-toggle"
@@ -44,6 +32,18 @@
             </svg>
           </button>
           <div class="header-search-panel" id="header-search-panel" data-search-panel hidden>
+            <form class="header-search-form" role="search" autocomplete="off" data-search-form>
+              <input
+                type="text"
+                name="q"
+                class="header-search-input"
+                placeholder="TAPEZ VOTRE RECHERCHE"
+                data-search-input
+                aria-label="Rechercher un candidat"
+                aria-autocomplete="list"
+                aria-controls="header-search-results"
+              >
+            </form>  
             <ul class="header-search-results" id="header-search-results" data-search-results></ul>
           </div>
         </div>
