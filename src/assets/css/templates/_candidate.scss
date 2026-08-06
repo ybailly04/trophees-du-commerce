@@ -8,7 +8,7 @@
     height: auto;
 
     @media #{$md} {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
     }
@@ -44,7 +44,7 @@
             font-weight: 500;
             font-size: .8em;
             text-decoration: none;
-            padding: .8em 1em;
+            padding: .4em 0.8em;
             border-radius: 6px;
         }
 
@@ -160,9 +160,10 @@
         @include container(50%);
         @media #{$md} {
             @include container();
+            padding-top: 8rem;
         }
         @media #{$sm} {
-            padding-top: 4rem;
+            //padding-top: 4rem;
         }
         @media print{
             @include container();
@@ -170,7 +171,7 @@
 
         &-back{
             margin: 0 0 4em 0;
-            padding: 1em 2em;
+            padding: 0.6em 1em;
             @media #{$md}, print {
                 display: none;
             }
@@ -225,8 +226,9 @@
         }
 
         &-back{
+            display: none;
             margin: 0 0 4em 0;
-            padding: 1em 2em;
+            padding: 0.6em 1em;
             position: absolute;
             top: 8em;
             left: 2em;

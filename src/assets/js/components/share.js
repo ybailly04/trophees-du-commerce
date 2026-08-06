@@ -9,6 +9,14 @@ export function initSocialShare() {
     const title = root.getAttribute('data-social-share-title') || document.title;
 
     root.addEventListener('click', e => {
+      const toggle = e.target.closest('[data-social-share-toggle]');
+      if (toggle) {
+        e.preventDefault();
+        const isOpen = root.classList.toggle('is--open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        return;
+      }
+
       const btn = e.target.closest('[data-social-share-type]');
       if (!btn) return;
       e.preventDefault();

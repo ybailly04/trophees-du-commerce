@@ -1,7 +1,6 @@
 <?php snippet('header') ?>
 
-  <main data-barba="container" data-barba-namespace="default">
-
+  <main data-barba="container" data-barba-namespace="<?= $page->toggleHeader() == "true" ? "default-header" : "default" ?>">
     <div class="default">
       <?php if($page->toggleHeader() == "true"): ?>
         <div class="default-header">

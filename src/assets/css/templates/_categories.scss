@@ -43,7 +43,7 @@
     }
     &-listing{
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         margin: 0;
         padding: 0;
         list-style-type: none;
@@ -83,9 +83,9 @@
     }
 
     &-vote{
-        background-color: $bordeaux;
+        background-color: $color-main;
         text-transform: uppercase;
-        color: $beige;
+        color: $bordeaux;
         border-radius: 6px;
         padding: .5em 2em;
         text-align: center;
@@ -95,7 +95,7 @@
         transition: color $ts-smooth, background $ts-smooth;
 
         &:disabled{
-            background-color: $beige-light;
+            background-color: $bordeaux;
             color: $bordeaux-light;
         }
     }

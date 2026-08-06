@@ -25,6 +25,7 @@ tabs:
                   - image
                   - gallery
                   - faq
+                  - list
       sidebar:
         width: 1/3
         sections:

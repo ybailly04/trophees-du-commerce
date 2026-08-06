@@ -27,18 +27,17 @@
         &-svg{
             pointer-events: none;
             position: absolute;
-            top: 2em;
+            top: 1.5em;
             left: 4em;
             width: calc(100% - 8em);
 
             @media #{$lg} {
-                top: 1.5em;
+                top: 1em;
                 left: 2em;
                 width: calc(100% - 4em);
             }
 
             @media #{$md} {
-                left: 1.5em;
                 width: calc(100% - 3em);
             }
         }

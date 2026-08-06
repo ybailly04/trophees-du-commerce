@@ -30,6 +30,17 @@
   display: flex;
 }
 
+.social-share__button--toggle {
+  background-color: $bordeaux;
+  color: $beige;
+}
+
+.social-share__label {
+  font-size: .85em;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 .social-share__icon.is--success {
   position: absolute;
 }
@@ -55,8 +66,21 @@
 
 /* Optional hover styling */
 [data-social-share-type] {
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.625, 0.05, 0, 1);
-  transform: scale(1) rotate(0.001deg);
+  translate: 0 0;
+  @for $i from 1 through 10 {
+    &:nth-child(10n + #{$i}) {
+      transition-delay: 0.04s * $i;
+    }
+  }
+}
+
+[data-social-share]:not(.is--open) [data-social-share-type] {
+  margin: 0;
+  opacity: 0;
+  translate: 0 -5px;
+  pointer-events: none;
 }
 
 [data-social-share]:has([data-social-share-type]:hover) [data-social-share-type] {

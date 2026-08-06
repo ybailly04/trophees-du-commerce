@@ -9,17 +9,14 @@
 @use "fonts";
 
 @use "layout/header";
-@use "layout/prefooter";
 @use "layout/footer";
 @use "layout/menu";
 
 @use "components/buttons";
 @use "components/cursor";
 @use "components/popup";
-@use "components/sticky-features";
 @use "components/forms";
 @use "components/share";
-@use "components/whatsapp";
 @use "components/transition";
 
 @use "templates/homepage";
@@ -40,3 +37,4 @@
 @use "blocks/image";
 @use "blocks/largeText";
 @use "blocks/heading";
+@use "blocks/list";

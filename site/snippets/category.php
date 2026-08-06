@@ -55,16 +55,22 @@
             <img class="category-logo" src="<?= $site->image('logo.svg')->url(); ?>" alt="<?= $candidate->title() ?>" data-cursor-text="<?= $candidate->title() ?>">
           <?php endif ?>
         </a>
-        <a class="category-link" href="<?= $candidate->url() ?>">En savoir plus</a>
+        <a class="category-link button" href="<?= $candidate->url() ?>">
+          <span class="button-inner">
+            <span class="button-text">En savoir plus</span>
+          </span></a>
         <button
-          class="category-vote"
+          class="category-vote button"
           type="button"
           data-vote-button
           data-vote-url="/vote/<?= $candidate->id() ?>"
           data-csrf="<?= csrf() ?>"
           <?= $hasVoted ? 'disabled' : '' ?>
         >
-        <?= $hasVoted ? 'Déjà voté' : 'Voter' ?>
+        <div class="button-inner">
+          <div class="button-text"><?= $hasVoted ? 'Votre pris en compte' : 'Voter' ?></div>
+          <span class="button-spinner"></span>
+        </div>
         </button>
       </li>
     <?php endforeach ?>

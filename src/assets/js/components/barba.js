@@ -299,6 +299,14 @@ barba.init({
             opacity: 0
         })
     }
+  },{
+    namespace: 'default-header',
+    beforeLeave(data) {
+        header.classList.remove('white');
+    },
+    beforeEnter(date){
+        header.classList.add('white');
+    }
   }]
 });
 

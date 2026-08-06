@@ -76,6 +76,17 @@
         color: currentColor;
         @include underline();
     }
+
+    ul, ol{
+        color: $bordeaux;
+        font-size: 1.1em;
+
+        li{
+            &::marker{
+                color: $color-main;
+            }
+        }
+    }
 }
 
 // ======================================
