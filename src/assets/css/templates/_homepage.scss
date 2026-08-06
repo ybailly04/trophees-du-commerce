@@ -138,9 +138,10 @@
     &-bottom{
         width: 100%;
         display: grid;
-        grid-template-columns: .2fr .8fr;
+        grid-template-columns: .1fr .15fr .75fr;
         padding-bottom: 2em;
-        gap: 8em;
+        gap: 2em;
+
         @media #{$sm} {
             gap: 1em;
             grid-template-columns: 1fr;
@@ -156,12 +157,15 @@
                 height: auto;
             }
         }
-    }
 
+    }
+    
     &-dates{
         flex-shrink: 0;
         color: $white;
         align-self: flex-end;
+
+        
         @media #{$sm} {
             display: flex;
             flex-direction: column;
@@ -179,6 +183,23 @@
             @media #{$sm} {
                 flex-direction: row;
             }
+        }
+    }
+
+    &-logos{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        gap: 1em;
+
+        &-bim{
+            height: 3rem;
+            width: auto;
+        }
+        &-vitrines{
+            height: 3rem;
+            width: auto;
         }
     }
 

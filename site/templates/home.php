@@ -38,6 +38,10 @@
                         <span>— <?= $page->dateFin() ?></span>
                     </div>
                 </div>
+                <div class="homepage-logos">
+                    <img class="homepage-logos-bim" src="<?= $site->image('logo_bim.svg')->url() ?>" alt="Bim Agency">
+                    <img class="homepage-logos-vitrines" src="<?= $site->image('logo_vitrines.png')->url() ?>" alt="Les Vitrines d'Annecy">
+                </div>
     
                 <img class="homepage-bottom-svg" src="<?= $site->image('title_bottom.svg')->url() ?>" alt="Trophées du commerce">
             </div>
