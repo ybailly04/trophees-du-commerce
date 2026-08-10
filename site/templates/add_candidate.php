@@ -71,7 +71,7 @@ $categories = site()->find('categories')?->children() ?? [];
         </div>
 
         <!-- Site web -->
-        <div class="form-field">
+        <div class="form-field full">
           <label for="website">Site web</label>
           <input
             type="url"
@@ -93,6 +93,18 @@ $categories = site()->find('categories')?->children() ?? [];
             placeholder="https://instagram.com/..."
           >
         </div>
+
+        <!-- Facebook -->
+        <div class="form-field">
+          <label for="facebook">Facebook</label>
+          <input
+            type="url"
+            id="facebook"
+            name="facebook"
+            value="<?= html($data['facebook'] ?? '') ?>"
+            placeholder="https://facebook.com/..."
+          >
+        </div>
   
         <!-- Description -->
         <div class="form-field full">
@@ -108,8 +120,8 @@ $categories = site()->find('categories')?->children() ?? [];
         <!-- Catégories -->
         <?php if ($categories->count() > 0): ?>
         <div class="form-field full">
-          <label for="categories">Catégorie</label>
-          <select id="categories" name="categories">
+          <label for="categories">Catégorie <span aria-hidden="true" class="form-asterisk">*</span></label>
+          <select id="categories" name="categories" required>
             <option value="">-- Sélectionner --</option>
             <?php foreach ($categories as $cat): ?>
               <option

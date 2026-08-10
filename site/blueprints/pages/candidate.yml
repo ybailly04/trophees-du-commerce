@@ -69,3 +69,6 @@ columns:
               instagram:
                 label: Lien vers Instagram
                 type: link
+              facebook:
+                label: Lien vers Facebook
+                type: link

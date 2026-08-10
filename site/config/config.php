@@ -102,6 +102,7 @@ return [
                     'categories'  => implode("\n", $rawCategories),
                     'website'     => get('website'),
                     'instagram'   => get('instagram'),
+                    'facebook'    => get('facebook'),
                 ];
 
                 $slug = Str::slug(get('title') . '-' . time());

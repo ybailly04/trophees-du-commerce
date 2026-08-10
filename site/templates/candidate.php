@@ -60,11 +60,17 @@
               <div class="candidate-tabs-contact" id="content-contact">
                 <?= $page->adress() ?>
                 <div class="candidate-links">
+                  <?php if($page->phone()): ?>
+                    <a href="tel:<?= $page->phone() ?>" class="candidate-links-link" target="_blank"><?= $page->phone() ?></a>
+                  <?php endif; ?>
                   <?php if($page->website()): ?>
                     <a href="<?= $page->website() ?>" class="candidate-links-link" target="_blank">Website</a>
                   <?php endif; ?>
-                  <?php if($page->phone()): ?>
-                    <a href="tel:<?= $page->phone() ?>" class="candidate-links-link" target="_blank"><?= $page->phone() ?></a>
+                  <?php if($page->instagram()): ?>
+                    <a href="<?= $page->instagram() ?>" class="candidate-links-link" target="_blank">Instagram</a>
+                  <?php endif; ?>
+                  <?php if($page->facebook()): ?>
+                    <a href="<?= $page->facebook() ?>" class="candidate-links-link" target="_blank">Facebook</a>
                   <?php endif; ?>
                 </div>
               </div>
