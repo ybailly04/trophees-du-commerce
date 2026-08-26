@@ -1,0 +1,104 @@
+@use '../variables' as *;
+
+.section-dock {
+  z-index: 100;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  bottom: 2em;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.section-dock__pill {
+  color: $bordeaux;
+  background-color: $white;
+  border-radius: 1.5em;
+  overflow: hidden;
+  //transition: width $ts-short, height $ts-short;
+}
+
+.section-dock__toggle {
+  white-space: nowrap;
+  appearance: none;
+  background-color: #0000;
+  border: none;
+  padding: .85em 1.5em;
+  display: block;
+}
+
+.section-dock__label-wrap {
+  height: 1.5em;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dock__link-num {
+  color: #161c338c;
+  margin-right: .6em;
+  font-size: .75em;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  bottom: .05em;
+}
+
+[data-section-dock-link][data-active] .section-dock__link-num {
+  color: $gray-lime;
+}
+
+.section-dock__label {
+  line-height: 1.5;
+  display: block;
+}
+
+.section-dock__list {
+  opacity: 0;
+  visibility: hidden;
+  width: max-content;
+  padding: .5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section-dock__indicator {
+  z-index: 1;
+  pointer-events: none;
+  background-color: $color-main;
+  border-radius: 100em;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section-dock__items {
+  flex-flow: column;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+}
+
+.section-dock__link {
+  z-index: 2;
+  white-space: nowrap;
+  color: inherit;
+  border-radius: 100em;
+  padding: .5em 1em;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+  display: block;
+  position: relative;
+}
+
+[data-section-dock-link][data-active] { 
+  color: #fff;
+}

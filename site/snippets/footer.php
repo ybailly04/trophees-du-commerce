@@ -12,6 +12,7 @@
 </div>
 
 <?php snippet('popup') ?>
+<?php snippet('nav') ?>
 
 </body>
 <?= vite()->js("assets/js/app.js") ?>

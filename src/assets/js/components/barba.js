@@ -4,6 +4,7 @@ import barba from '@barba/core';
 
 import { HeaderManager } from "./header";
 import { initSocialShare } from "./share.js";
+import { initSectionAnchorDock, syncSectionAnchorDockActiveState } from "./nav.js";
 import { initAccordionCSS } from "./accordion.js";
 import { initVoteButtons } from "./vote.js";
 import { initGallery } from "./gallery.js";
@@ -59,6 +60,7 @@ function initOnceFunctions() {
   
   // Runs once on first load
   initSocialShare();
+  initSectionAnchorDock();
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
@@ -85,6 +87,7 @@ function initAfterEnterFunctions(next) {
   
   headerManager.initBurgers();
   initSocialShare();
+  initSectionAnchorDock();
   if(has('.bfi')) bfi_init();
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
@@ -195,6 +198,7 @@ barba.hooks.afterLeave(() => {
 
 barba.hooks.enter(data => {
   initBarbaNavUpdate(data);
+  syncSectionAnchorDockActiveState();
 })
 
 barba.hooks.afterEnter(data => {
@@ -307,6 +311,18 @@ barba.init({
     beforeEnter(date){
         header.classList.add('white');
     }
+  },{
+    namespace: 'categories',
+    beforeLeave(data) {
+      gsap.to('.section-dock',{
+        autoAlpha: 0,
+      })
+    },
+    beforeEnter(date){
+      gsap.to('.section-dock',{
+        autoAlpha: 1,
+      })
+    }
   }]
 });
 
@@ -408,6 +424,9 @@ function initBarbaNavUpdate(data) {
     // Class list sync
     var newClassList = next.getAttribute('class') || '';
     curr.setAttribute('class', newClassList);
+
+    // Active state sync (e.g. section-dock category link)
+    curr.toggleAttribute('data-active', next.hasAttribute('data-active'));
   });
 }
 

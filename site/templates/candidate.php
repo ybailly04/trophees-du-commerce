@@ -118,7 +118,7 @@
         </a>
         <div class="candidate-right-images">
           <?php $options = [
-              'image' => $page->image() ? $page->image() : $site->image('placeholder.png'),
+              'image' => $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
               'srcset' => 'half',
               'ratio' => '24/31',
               'loading' => 'eager',
@@ -155,7 +155,7 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                   <?php $options = [
-                      'image' => $page->image() ? $page->image() : $site->image('placeholder.png'),
+                      'image' => $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
                       'srcset' => 'default',
                       'ratio' => '5/3',
                       'loading' => 'eager',

@@ -192,6 +192,9 @@
         justify-content: center;
         align-self: center;
         gap: 1em;
+        @media #{$sm} {
+            align-items: flex-start;
+        }
 
         &-bim{
             height: 3rem;
