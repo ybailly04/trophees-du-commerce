@@ -1,0 +1,33 @@
+{
+    "name": "sylvainjule/matomo",
+    "description": "Matomo helpers, panel area and sections for Kirby",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "version": "2.1.1",
+    "authors": [
+        {
+            "name": "Sylvain Julé",
+            "email": "contact@sylvain-jule.fr"
+        },
+        {
+            "name": "Sören Engels"
+        },
+        {
+            "name": "Philipp Trenz",
+            "email": "mail@philipptrenz.de"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "extra": {
+        "installer-name": "matomo"
+    },
+    "minimum-stability": "beta",
+    "config": {
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
+}

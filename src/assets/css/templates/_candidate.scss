@@ -19,6 +19,7 @@
         background-color: $white;
         border-radius: 16px;
         padding: 1em;
+        object-fit: contain;
     }
 
     &-top{
@@ -35,6 +36,10 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            width: calc(100% - 14rem);
+            @media #{$md} {
+                width: 100%;
+            }
         }
 
         &-category{
@@ -137,6 +142,10 @@
             min-height: 8em;
             color: $beige;
             margin-bottom: 2em;
+            width: calc(100% - 4rem);
+            @media #{$md} {
+                width: 100%;
+            }
 
             @media print{
                 display: none;

@@ -3,7 +3,12 @@
 $smtp = include __DIR__ . '/config.smtp.php';
 
 return [
-    'debug'  => true,
+    'debug'  => false,
+    'cache' => [
+        'pages' => [
+            'active' => true,
+        ]
+    ],
     'email'  => [
         'transport' => [
             'type'     => 'smtp',
@@ -301,5 +306,9 @@ return [
                 '200w'  => ['width' => 65, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ]
         ]
-    ]
+    ],
+    'sylvainjule.matomo.url'        => 'https://stats.tropheesducommerce.fr',
+    'sylvainjule.matomo.id'         => '1',
+    'sylvainjule.matomo.token'      => 'b1123ce2da29c533ccac8eb75a18270f',
+    'sylvainjule.matomo.active'     => true
 ];

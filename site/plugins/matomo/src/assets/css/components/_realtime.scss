@@ -1,0 +1,39 @@
+.matomo-realtime {
+	.refresh {
+		position: absolute;
+		right: 0.9rem;
+		top: 1rem;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.5rem;
+		border-radius: 4px;
+		background: light-dark(darken(#fafafa, 3%), hsl(0, 0%, calc(15% + 0%)));
+		letter-spacing: 0.15px;
+		color: light-dark(lighten($grey, 5%), rgba(255, 255, 255, .6));
+		cursor: pointer;
+		transition: color 0.2s ease-out;
+		&:hover {
+			color: light-dark(black, white);
+		}
+	}
+	.big-number {
+		font-weight: 800;
+		font-size: 30px;
+		margin-top: 5px;
+	}
+	.details {
+		position: relative;
+		font-size: 0.75rem;
+		color: lighten($grey, 10%);
+		margin-top: 20px;
+		padding-top: 15px;
+		line-height: 1.5;
+		&:before {
+			position: absolute;
+			content: '';
+			width: 15px;
+			height: 1px;
+			background: light-dark(lighten($grey, 20%), rgba(255, 255, 255, .3));
+			top: 0;
+		}
+	}
+}

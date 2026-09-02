@@ -1,0 +1,124 @@
+.matomo-page {
+	padding: 1.5rem;
+	padding-bottom: 1.25rem;
+	background: light-dark(white, hsl(0, 0%, calc(19% + 0%)));
+	box-shadow: 0 2px 5px rgba(22,23,26,.05);
+	border-radius: var(--rounded);
+	margin-bottom: 3rem;
+	.code {
+		text-transform: uppercase;
+		padding: 2px 4px;
+		border-radius: 3px;
+		margin-left: 5px;
+		background: light-dark(#f2f2f2, rgba(white, .2));
+        color: light-dark(#919191, rgba(white, .8));
+	}
+	.loader, table {
+		margin-top: calc(20px - 0.5rem);
+	}
+	table {
+		display: block;
+		width: 100%;
+		tr {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			font-size: 0.75rem;
+			padding: 0.5rem 10px 0.5rem 5px;
+			th {
+				text-align: right;
+				display: block;
+				font-weight: 400;
+				&:nth-child(3) {
+					span {
+						text-transform: uppercase;
+						padding: 2px 4px;
+						border-radius: 3px;
+						margin-right: -4px;
+						border: 1px solid light-dark(lighten(#d9d9d9, 7%), rgba(white, .3));
+        				color: light-dark(#919191, rgba(white, .7));
+					}
+				}
+			}
+			td {
+				display: block;
+				white-space: pre;
+				@include text-truncate;
+				.icon {
+					display: block;
+					width: 18px;
+					height: 18px;
+					margin-right: 10px;
+					svg {
+						width: 100%;
+						height: 100%;
+						fill: light-dark(lighten($grey, 20%), rgba(255, 255, 255, .5));
+					}
+				}
+				&:first-child {
+					display: flex;
+					align-items: center;
+				}
+				&:nth-child(3) {
+					color: lighten($grey, 20%);
+				}
+			}
+			th, td {
+				&:first-child {
+					min-width: 100px;
+					margin-right: auto;
+				}
+				&:nth-child(2),
+				&:nth-child(3) {
+					text-align: right;
+					width: 50px;
+				}
+				&:nth-child(2) {
+					&+ td, &+ th {
+						margin-left: 10px;
+					}
+				}
+			}
+			.number {
+				margin-left: auto;
+			}
+			&:not(:last-child) {
+				border-bottom: 1px solid light-dark(lighten(#d9d9d9, 7%), rgba(255, 255, 255, .2));
+			}
+			&:hover {
+				&:not(:first-child) {
+					background: light-dark(#fafafa, hsl(0, 0%, calc(15% + 0%)));
+					.icon {
+						svg {
+							fill: light-dark($grey, rgba(255, 255, 255, .8));
+						}
+					}
+					td {
+						&:nth-child(3) {
+							color: light-dark($grey, rgba(255, 255, 255, .8));
+						}
+					}
+				}
+			}
+		}
+	}
+	@include respond-to('smaller-1200') {
+		table {
+			tr {
+				td .icon {
+					display: none;
+				}
+			}
+		}
+	}
+	@include respond-to('smaller-1040') {
+		table {
+			tr {
+				td .icon {
+					display: block;
+				}
+			}
+		}
+	}
+
+}

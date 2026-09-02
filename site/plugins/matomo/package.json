@@ -1,0 +1,31 @@
+{
+  "name": "kirby-matomo",
+  "description": "Matomo helpers and panel sections for Kirby",
+  "main": "index.js",
+  "author": "Sylvain Julé",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "kirbyup serve src/index.js",
+    "build": "kirbyup src/index.js",
+    "lint": "eslint \"src/**/*.{js,vue}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write \"src/**/*.{css,js,vue}\""
+  },
+  "posthtml": {
+    "recognizeSelfClosing": true
+  },
+  "devDependencies": {
+    "chart.js": "^2.7.2",
+    "dayjs": "^1.7.7",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "kirbyup": "^3.1.4",
+    "prettier": "^2.4.1",
+    "vue-chartjs": "^3.4.0"
+  },
+  "alias": {
+    "chart.js": "chart.js/dist/Chart.min.js"
+  }
+}

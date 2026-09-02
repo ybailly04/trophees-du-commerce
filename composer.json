@@ -25,7 +25,8 @@
     "getkirby/cms": "^5.2",
     "mzur/kirby-uniform": "^5.7",
     "arnoson/kirby-vite": "^5.7",
-    "timnarr/kirby-imagex": "^0.2.0"
+    "timnarr/kirby-imagex": "^0.2.0",
+    "sylvainjule/matomo": "^2.1"
   },
   "config": {
     "allow-plugins": {

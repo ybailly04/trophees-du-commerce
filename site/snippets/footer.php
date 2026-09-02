@@ -16,4 +16,5 @@
 
 </body>
 <?= vite()->js("assets/js/app.js") ?>
+<?php echo snippet('matomo') ?>
 </html>
