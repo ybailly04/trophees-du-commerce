@@ -50,7 +50,20 @@
       <li class="category-list">
         <a href="<?= $candidate->url() ?>">
           <?php if ($logo = $candidate->logo()->toFile()): ?>
-            <img class="category-logo" src="<?= $logo->url() ?>" alt="<?= $candidate->title() ?>" data-cursor-text="<?= $candidate->title() ?>">
+            <?php $logoOptions = [
+              'image' => $logo,
+              'srcset' => 'logo',
+              'attributes' => [
+                'picture' => [
+                  'class' => ['category-logo'],
+                ],
+                'img' => [
+                  'alt' => $candidate->title(),
+                  'data-cursor-text' => $candidate->title(),
+                ]
+              ]
+            ]; ?>
+            <?php snippet('imagex-picture', $logoOptions) ?>
             <?php else: ?>
             <img class="category-logo" src="<?= $site->image('logo.svg')->url(); ?>" alt="<?= $candidate->title() ?>" data-cursor-text="<?= $candidate->title() ?>">
           <?php endif ?>
@@ -68,7 +81,7 @@
           <?= $hasVoted ? 'disabled' : '' ?>
         >
         <div class="button-inner">
-          <div class="button-text"><?= $hasVoted ? 'Votre pris en compte' : 'Voter' ?></div>
+          <div class="button-text"><?= $hasVoted ? 'Vote pris en compte' : 'Voter' ?></div>
           <span class="button-spinner"></span>
         </div>
         </button>

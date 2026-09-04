@@ -299,11 +299,17 @@ return [
             'gallery-webp' => [
                 '200w'  => ['width' =>  200, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ],
+            'logo' => [
+                '200w' => ['width' => 250, 'crop' => true, 'quality' => 80],
+            ],
+            'logo-webp' => [
+                '250w'  => ['width' =>  250, 'crop' => false, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+            ],
             'thumb' => [
                 '65w' => ['width' => 65, 'crop' => true, 'quality' => 80],
             ],
             'thumb-webp' => [
-                '200w'  => ['width' => 65, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
+                '65w'  => ['width' => 65, 'crop' => true, 'quality' => 75, 'format' => 'webp', 'sharpen' => 10],
             ]
         ]
     ],

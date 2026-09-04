@@ -4,7 +4,8 @@
     <section class="homepage">
         <span class="homepage-grid"></span>
         <?php if ($video = $page->video()->toFile()): ?>
-            <video class="homepage-video" autoplay muted loop playsinline>
+            <video class="homepage-video" autoplay muted loop playsinline
+                poster="<?= $site->image('frame-home.png')->url() ?>">
                 <source src="<?= $video->url() ?>" type="video/mp4">
             </video>
         <?php endif; ?>

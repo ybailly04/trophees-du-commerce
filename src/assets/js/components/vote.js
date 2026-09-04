@@ -21,12 +21,12 @@ export function initVoteButtons() {
 
         if (!response.ok) {
           if (response.status === 409) {
-            inner.textContent = `Votre pris en compte`;
+            inner.textContent = `Vote pris en compte`;
             return;
           }
           throw new Error(data.error || "Erreur lors du vote.");
         }else{
-          inner.textContent = `Votre pris en compte`;
+          inner.textContent = `Vote pris en compte`;
         }
 
       } catch (error) {
