@@ -8,6 +8,7 @@ import { initSectionAnchorDock, syncSectionAnchorDockActiveState } from "./nav.j
 import { initAccordionCSS } from "./accordion.js";
 import { initVoteButtons } from "./vote.js";
 import { initGallery } from "./gallery.js";
+import { initCandidatureForm } from "./candidature-form.js";
 import { bfi_init } from '../../../../node_modules/better-file-input/dist/bfi.js';
 import { CursorManager } from "./cursor.js";
 import { SliderManager } from "./sliders.js";
@@ -65,6 +66,7 @@ function initOnceFunctions() {
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
   if(has('[data-gallery-thumb]')) initGallery();
+  if(has('.form-form')) initCandidatureForm();
   if(has('[data-swiper]')){
     let sliderManager = new SliderManager(document.querySelector('[data-swiper]'));
     sliderManager.initSlider();
@@ -92,6 +94,7 @@ function initAfterEnterFunctions(next) {
   if(has('[data-accordion-css-init]')) initAccordionCSS();
   if(has('[data-vote-button]')) initVoteButtons();
   if(has('[data-gallery-thumb]')) initGallery();
+  if(has('.form-form')) initCandidatureForm();
   if(has('[data-swiper]')){
     let sliderManager = new SliderManager(document.querySelector('[data-swiper]'));
     sliderManager.initSlider();

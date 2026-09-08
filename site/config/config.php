@@ -53,12 +53,61 @@ return [
             'pattern' => 'candidature/submit',
             'method'  => 'POST',
             'action'  => function () {
+                // Si les fichiers envoyés dépassent post_max_size, PHP vide
+                // entièrement $_POST et $_FILES : on le détecte ici pour éviter
+                // un plantage silencieux et afficher un message clair.
+                if (empty($_POST) && empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
+                    kirby()->session()->set('form_errors', [
+                        'Les fichiers envoyés sont trop volumineux. Merci de réduire leur taille (5 Mo maximum par fichier) et réessayer.',
+                    ]);
+                    go('candidature');
+                }
+
                 // Protection CSRF
                 if (!csrf(get('_csrf'))) {
                     go('candidature?error=csrf');
                 }
 
                 $errors = [];
+                $maxFileSize = 5 * 1024 * 1024; // 5 Mo
+                $maxGalleryFiles = 5;
+
+                $fileTooLarge = static function (array $error) {
+                    return in_array($error['error'] ?? null, [UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE], true);
+                };
+
+                foreach (['logo' => 'Logo', 'image' => 'Image principale'] as $field => $label) {
+                    $error = $_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE;
+
+                    if ($error === UPLOAD_ERR_NO_FILE) {
+                        $errors[] = "Le champ \"$label\" est requis.";
+                    } elseif ($fileTooLarge(['error' => $error]) || ($_FILES[$field]['size'] ?? 0) > $maxFileSize) {
+                        $errors[] = "Le fichier \"$label\" dépasse la taille maximale autorisée (5 Mo).";
+                    } elseif ($error !== UPLOAD_ERR_OK) {
+                        $errors[] = "Une erreur est survenue lors de l'envoi du fichier \"$label\".";
+                    }
+                }
+
+                if (isset($_FILES['gallery'])) {
+                    $galleryErrors = $_FILES['gallery']['error'] ?? [];
+                    $gallerySizes  = $_FILES['gallery']['size'] ?? [];
+
+                    if (count($galleryErrors) > $maxGalleryFiles) {
+                        $errors[] = "Vous ne pouvez pas envoyer plus de $maxGalleryFiles photos dans la galerie.";
+                    }
+
+                    foreach ($galleryErrors as $i => $error) {
+                        if ($error === UPLOAD_ERR_NO_FILE) {
+                            continue;
+                        }
+
+                        if ($fileTooLarge(['error' => $error]) || ($gallerySizes[$i] ?? 0) > $maxFileSize) {
+                            $errors[] = 'Une des images de la galerie dépasse la taille maximale autorisée (5 Mo).';
+                        } elseif ($error !== UPLOAD_ERR_OK) {
+                            $errors[] = "Une erreur est survenue lors de l'envoi d'une image de la galerie.";
+                        }
+                    }
+                }
 
                 $dateInscriptions = site()->dateInscriptions()->toDate('U');
                 if ($dateInscriptions && time() > $dateInscriptions) {
@@ -112,54 +161,70 @@ return [
 
                 $slug = Str::slug(get('title') . '-' . time());
 
-                $page = kirby()->impersonate('kirby', function () use ($parent, $slug, $content) {
-                    return $parent->createChild([
-                        'slug'     => $slug,
-                        'template' => 'candidate',
-                        'content'  => $content,
-                    ]);
-                });
+                try {
+                    $page = kirby()->impersonate('kirby', function () use ($parent, $slug, $content) {
+                        return $parent->createChild([
+                            'slug'     => $slug,
+                            'template' => 'candidate',
+                            'content'  => $content,
+                        ]);
+                    });
 
-                // Upload des fichiers (logo, image, galerie) et mise à jour du contenu en une seule fois
-                if ($page instanceof \Kirby\Cms\Page) {
-                    kirby()->impersonate('kirby', function () use ($page) {
-                        $update = [];
+                    // Upload des fichiers (logo, image, galerie) et mise à jour du contenu en une seule fois
+                    if ($page instanceof \Kirby\Cms\Page) {
+                        kirby()->impersonate('kirby', function () use ($page) {
+                            $update = [];
 
-                        foreach (['logo', 'image'] as $field) {
-                            if (($_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
-                                continue;
-                            }
-
-                            $update[$field] = $page->createFile([
-                                'source'   => $_FILES[$field]['tmp_name'],
-                                'filename' => $_FILES[$field]['name'],
-                            ])->uuid()->toString();
-                        }
-
-                        if (isset($_FILES['gallery'])) {
-                            $galleryUuids = [];
-                            $names = $_FILES['gallery']['name'] ?? [];
-
-                            foreach ($names as $i => $name) {
-                                if ($_FILES['gallery']['error'][$i] !== UPLOAD_ERR_OK) {
+                            foreach (['logo', 'image'] as $field) {
+                                if (($_FILES[$field]['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
                                     continue;
                                 }
 
-                                $galleryUuids[] = $page->createFile([
-                                    'source'   => $_FILES['gallery']['tmp_name'][$i],
-                                    'filename' => $name,
+                                $update[$field] = $page->createFile([
+                                    'source'   => $_FILES[$field]['tmp_name'],
+                                    'filename' => $_FILES[$field]['name'],
                                 ])->uuid()->toString();
                             }
 
-                            if (!empty($galleryUuids)) {
-                                $update['galery'] = $galleryUuids;
-                            }
-                        }
+                            if (isset($_FILES['gallery'])) {
+                                $galleryUuids = [];
+                                $names = $_FILES['gallery']['name'] ?? [];
 
-                        if (!empty($update)) {
-                            $page->update($update);
-                        }
-                    });
+                                foreach ($names as $i => $name) {
+                                    if ($_FILES['gallery']['error'][$i] !== UPLOAD_ERR_OK) {
+                                        continue;
+                                    }
+
+                                    $galleryUuids[] = $page->createFile([
+                                        'source'   => $_FILES['gallery']['tmp_name'][$i],
+                                        'filename' => $name,
+                                    ])->uuid()->toString();
+                                }
+
+                                if (!empty($galleryUuids)) {
+                                    $update['galery'] = $galleryUuids;
+                                }
+                            }
+
+                            if (!empty($update)) {
+                                $page->update($update);
+                            }
+                        });
+                    }
+                } catch (\Throwable $e) {
+                    error_log('Erreur lors de la création de la candidature : ' . $e->getMessage());
+
+                    if (isset($page) && $page instanceof \Kirby\Cms\Page) {
+                        kirby()->impersonate('kirby', function () use ($page) {
+                            $page->delete(true);
+                        });
+                    }
+
+                    kirby()->session()->set('form_errors', [
+                        "Une erreur est survenue lors de l'envoi de votre candidature. Merci de réessayer.",
+                    ]);
+                    kirby()->session()->set('form_data', array_merge(get(), ['categories' => $rawCategories]));
+                    go('candidature');
                 }
 
                 go('candidature?success=1');
