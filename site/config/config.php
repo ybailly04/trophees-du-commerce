@@ -7,6 +7,7 @@ return [
     'cache' => [
         'pages' => [
             'active' => true,
+            'ignore' => ['formulaire-de-candidature']
         ]
     ],
     'email'  => [
@@ -53,19 +54,16 @@ return [
             'pattern' => 'candidature/submit',
             'method'  => 'POST',
             'action'  => function () {
-                // Si les fichiers envoyés dépassent post_max_size, PHP vide
-                // entièrement $_POST et $_FILES : on le détecte ici pour éviter
-                // un plantage silencieux et afficher un message clair.
                 if (empty($_POST) && empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
                     kirby()->session()->set('form_errors', [
                         'Les fichiers envoyés sont trop volumineux. Merci de réduire leur taille (5 Mo maximum par fichier) et réessayer.',
                     ]);
-                    go('candidature');
+                    go('formulaire-de-candidature');
                 }
 
                 // Protection CSRF
                 if (!csrf(get('_csrf'))) {
-                    go('candidature?error=csrf');
+                    go('formulaire-de-candidature?error=csrf');
                 }
 
                 $errors = [];
@@ -139,12 +137,12 @@ return [
                 if (!empty($errors)) {
                     kirby()->session()->set('form_errors', $errors);
                     kirby()->session()->set('form_data', array_merge(get(), ['categories' => $rawCategories]));
-                    go('candidature');
+                    go('formulaire-de-candidature');
                 }
 
                 $parent = site()->find('candidates');
                 if (!$parent) {
-                    go('candidature?error=configuration');
+                    go('formulaire-de-candidature?error=configuration');
                 }
 
                 $content = [
@@ -224,10 +222,10 @@ return [
                         "Une erreur est survenue lors de l'envoi de votre candidature. Merci de réessayer.",
                     ]);
                     kirby()->session()->set('form_data', array_merge(get(), ['categories' => $rawCategories]));
-                    go('candidature');
+                    go('formulaire-de-candidature');
                 }
 
-                go('candidature?success=1');
+                go('formulaire-de-candidature?success=1');
             }
         ],
         [
