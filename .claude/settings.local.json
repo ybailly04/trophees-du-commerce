@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/laragon/etc/**)",
+      "Read(//d/laragon/etc/apache2/sites-enabled/**)",
+      "Read(//d/laragon/etc/nginx/sites-enabled/**)",
+      "Bash(xargs grep -l \"hook\\\\|hooks\")",
+      "Bash(php -v)",
+      "Bash(php -l \"d:/laragon/www/trophees-du-commerce/site/config/config.php\")",
+      "Bash(php -l \"d:/laragon/www/trophees-du-commerce/site/config/config.smtp.php\")"
+    ]
+  }
+}

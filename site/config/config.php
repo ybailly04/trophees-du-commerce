@@ -10,6 +10,12 @@ return [
             'ignore' => ['formulaire-de-candidature']
         ]
     ],
+    'session' => [
+        // 2h d'inactivité au lieu des 30 min par défaut : le formulaire de
+        // candidature est long (photos, description...) et une session
+        // expirée invalidait silencieusement le jeton CSRF à la soumission.
+        'timeout' => 7200,
+    ],
     'email'  => [
         'transport' => [
             'type'     => 'smtp',
@@ -54,6 +60,11 @@ return [
             'pattern' => 'candidature/submit',
             'method'  => 'POST',
             'action'  => function () {
+                $rawCategories = get('categories', []);
+                if (!is_array($rawCategories)) {
+                    $rawCategories = [$rawCategories];
+                }
+
                 if (empty($_POST) && empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
                     kirby()->session()->set('form_errors', [
                         'Les fichiers envoyés sont trop volumineux. Merci de réduire leur taille (5 Mo maximum par fichier) et réessayer.',
@@ -63,7 +74,11 @@ return [
 
                 // Protection CSRF
                 if (!csrf(get('_csrf'))) {
-                    go('formulaire-de-candidature?error=csrf');
+                    kirby()->session()->set('form_errors', [
+                        'Votre session a expiré. Merci de valider à nouveau le formulaire ci-dessous (vos champs ont été conservés, il faudra seulement rejoindre vos fichiers).',
+                    ]);
+                    kirby()->session()->set('form_data', array_merge(get(), ['categories' => $rawCategories]));
+                    go('formulaire-de-candidature');
                 }
 
                 $errors = [];
@@ -126,10 +141,6 @@ return [
                     $errors[] = 'La description ne peut pas dépasser 600 caractères.';
                 }
 
-                $rawCategories = get('categories', []);
-                if (!is_array($rawCategories)) {
-                    $rawCategories = [$rawCategories];
-                }
                 if (count($rawCategories) > 5) {
                     $errors[] = 'Vous ne pouvez pas sélectionner plus de 5 catégories.';
                 }
@@ -142,7 +153,21 @@ return [
 
                 $parent = site()->find('candidates');
                 if (!$parent) {
-                    go('formulaire-de-candidature?error=configuration');
+                    kirby()->session()->set('form_errors', [
+                        "Une erreur de configuration empêche l'envoi du formulaire. Merci de réessayer plus tard ou de nous contacter.",
+                    ]);
+                    kirby()->session()->set('form_data', array_merge(get(), ['categories' => $rawCategories]));
+                    go('formulaire-de-candidature');
+                }
+
+                // Le champ "categories" du blueprint est de type `pages` : il attend des
+                // références `page://<uuid>`, pas les uri brutes envoyées par le <select>.
+                // On ne garde que celles qui correspondent à une vraie catégorie existante.
+                $categoryPages = [];
+                foreach (site()->find('categories')?->children() ?? [] as $categoryPage) {
+                    if (in_array($categoryPage->uri(), $rawCategories, true)) {
+                        $categoryPages[] = $categoryPage->uuid()->toString();
+                    }
                 }
 
                 $content = [
@@ -151,13 +176,13 @@ return [
                     'email'       => $email,
                     'phone'       => get('phone'),
                     'description' => $description,
-                    'categories'  => implode("\n", $rawCategories),
+                    'categories'  => $categoryPages,
                     'website'     => get('website'),
                     'instagram'   => get('instagram'),
                     'facebook'    => get('facebook'),
                 ];
 
-                $slug = Str::slug(get('title') . '-' . time());
+                $slug = Str::slug(get('title')) . '-' . bin2hex(random_bytes(4));
 
                 try {
                     $page = kirby()->impersonate('kirby', function () use ($parent, $slug, $content) {

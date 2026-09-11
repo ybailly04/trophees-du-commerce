@@ -63,3 +63,11 @@ node_modules/
 content/
 
 *.gz
+
+public/site
+
+public/media
+
+public/kirby
+
+public/content

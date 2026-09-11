@@ -4,10 +4,8 @@
   "type": "module",
   "scripts": {
     "vite": "vite",
-    "dev": "concurrently \"npm:server\" \"npm:vite\" -c yellow,green",
-    "server": "php -S localhost:8888 -t public ./kirby/router.php",
-    "build": "vite build --emptyOutDir",
-    "preview": "npm run build && npm run server"
+    "dev": "vite",
+    "build": "vite build --emptyOutDir"
   },
   "author": "arnoson",
   "license": "MIT",

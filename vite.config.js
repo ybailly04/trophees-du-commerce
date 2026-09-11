@@ -2,6 +2,8 @@ import { resolve } from 'path'
 import { rmSync } from 'fs'
 import kirby from 'vite-plugin-kirby'
 
+const host = 'localhost';
+
 export default ({ mode }) => ({
   root: 'src',
   base: mode === 'development' ? '/' : '/public/dist/',
@@ -22,6 +24,12 @@ export default ({ mode }) => ({
         },
       },
     },
+  },
+
+  server: {
+    hmr: {host},
+    host,
+    cors: true,
   },
 
   plugins: [

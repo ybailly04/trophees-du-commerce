@@ -16,9 +16,9 @@ $categories = site()->find('categories')?->children() ?? [];
     <h2 class="form-subtitle">Vous possédez un établissement et souhaitez participer? </h2>
 
     <?php if ($success): ?>
-      <p class="form-success">Votre candidature a bien été envoyée !</p>
-    <?php else: ?>
-  
+      <p class="form-success">Votre candidature a bien été envoyée ! Vous pouvez inscrire un autre établissement ci-dessous.</p>
+    <?php endif ?>
+
       <?php if (!empty($errors)): ?>
         <ul class="form-errors">
           <?php foreach ($errors as $error): ?>
@@ -162,8 +162,6 @@ $categories = site()->find('categories')?->children() ?? [];
           </div>
         </button>
       </form>
-  
-    <?php endif ?>
   </div>
 
 <?php snippet('footer') ?>
