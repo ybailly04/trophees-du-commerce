@@ -8,6 +8,8 @@ export class SliderManager {
         this.prev = el.querySelector('[data-swiper-prev]')
         this.pagination = el.querySelector('[data-swiper-pagination]')
         this.slider;
+
+        console.log(this.pagination);
     }
 
     initSlider(){

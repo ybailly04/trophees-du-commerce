@@ -156,8 +156,8 @@
                 <div class="swiper-slide">
                   <?php $options = [
                       'image' => $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
-                      'srcset' => 'default',
-                      'ratio' => '5/3',
+                      'srcset' => 'half',
+                      'ratio' => '24/31',
                       'loading' => 'eager',
                       'attributes' => [
                         'picture' => [
@@ -170,8 +170,8 @@
                 <?php foreach($images as $image): 
                       $options = [
                       'image' => $image,
-                      'srcset' => 'default',
-                      'ratio' => '5/3',
+                      'srcset' => 'half',
+                      'ratio' => '24/31',
                       'loading' => 'eager',
                       'attributes' => [
                         'picture' => [

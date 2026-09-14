@@ -138,7 +138,7 @@
     &-bottom{
         width: 100%;
         display: grid;
-        grid-template-columns: .1fr .15fr .75fr;
+        grid-template-columns: .1fr .2fr .7fr;
         padding-bottom: 2em;
         gap: 2em;
 
@@ -201,6 +201,10 @@
             width: auto;
         }
         &-vitrines{
+            height: 3rem;
+            width: auto;
+        }
+        &-annecy{
             height: 3rem;
             width: auto;
         }

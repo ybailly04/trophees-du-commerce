@@ -3,7 +3,7 @@
 $smtp = include __DIR__ . '/config.smtp.php';
 
 return [
-    'debug'  => false,
+    'debug'  => true,
     'cache' => [
         'pages' => [
             'active' => true,

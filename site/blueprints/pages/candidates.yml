@@ -7,3 +7,5 @@ sections:
     template: candidate
     label: Touts les candidats
     create: candidate
+    sortBy: count desc
+    info: "{{ page.count }} votes"

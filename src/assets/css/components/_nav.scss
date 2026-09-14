@@ -13,10 +13,11 @@
 }
 
 .section-dock__pill {
-  color: $bordeaux;
-  background-color: $white;
+  color: $white;
+  background-color: $color-main;
   border-radius: 1.5em;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba($black, .2);
   //transition: width $ts-short, height $ts-short;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .section-dock__link-num {
-  color: #161c338c;
+  color: $white;
   margin-right: .6em;
   font-size: .75em;
   line-height: 1;
@@ -47,7 +48,7 @@
 }
 
 [data-section-dock-link][data-active] .section-dock__link-num {
-  color: $gray-lime;
+  color: $color-main;
 }
 
 .section-dock__label {
@@ -68,7 +69,7 @@
 .section-dock__indicator {
   z-index: 1;
   pointer-events: none;
-  background-color: $color-main;
+  background-color: $white;
   border-radius: 100em;
   width: 2em;
   height: 2em;
@@ -100,5 +101,5 @@
 }
 
 [data-section-dock-link][data-active] { 
-  color: #fff;
+  color: $color-main;
 }

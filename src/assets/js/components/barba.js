@@ -67,10 +67,6 @@ function initOnceFunctions() {
   if(has('[data-vote-button]')) initVoteButtons();
   if(has('[data-gallery-thumb]')) initGallery();
   if(has('.form-form')) initCandidatureForm();
-  if(has('[data-swiper]')){
-    let sliderManager = new SliderManager(document.querySelector('[data-swiper]'));
-    sliderManager.initSlider();
-  }
 }
 
 function initBeforeEnterFunctions(next) {
