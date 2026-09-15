@@ -58,6 +58,9 @@
             text-transform: uppercase;
             color: $bordeaux;
             margin: .5em 0;
+            @media #{$sm}{
+                font-size: 2.2em;
+            }
         }
     }
 
@@ -199,6 +202,9 @@
             @media print{
                 display: none;
             }
+            @media #{$sm}{
+                height: 100lvh;
+            }
         }
     }
 
@@ -313,6 +319,12 @@
             position: relative;
             top: initial;
             z-index: 0;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         &-pagination{

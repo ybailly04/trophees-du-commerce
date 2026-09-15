@@ -19,7 +19,7 @@
         justify-content: space-between;
 
         @media #{$md} {
-            padding: 8em 0 0 0;
+            padding: 6em 0 0 0;
             align-items: flex-end;
             justify-content: flex-end;
         }
@@ -153,6 +153,7 @@
             height: auto;
             display: block;
             justify-self: flex-end;
+            align-self: flex-end;
             @media #{$sm} {
                 height: auto;
             }
@@ -163,12 +164,14 @@
     &-dates{
         flex-shrink: 0;
         color: $white;
-        align-self: flex-end;
+        align-self: center;
 
         
         @media #{$sm} {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 100%;
         }
         &-title{
@@ -194,6 +197,7 @@
         gap: 1em;
         @media #{$sm} {
             align-items: flex-start;
+            justify-content: center;
         }
 
         &-bim{

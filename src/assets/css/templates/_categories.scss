@@ -5,7 +5,7 @@
 
 }
 .category{
-    padding-top: 8em;
+    padding-top: 10em;
     padding-bottom: 4em;
     @include container;
     @media #{$sm} {
@@ -16,7 +16,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 1em 0 3em;
+        margin: 1em 0 5em;
         padding: 0 4em;
         @media #{$md} {
             padding: 0;

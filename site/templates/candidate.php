@@ -90,6 +90,22 @@
 
       <div class="candidate-right">
         <div class="candidate-right-thumbs">
+          <?php 
+          $firstImage = $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png');
+          $options = [
+              'image' => $firstImage,
+              'srcset' => 'thumb',
+              'ratio' => '5/7',
+              'loading' => 'eager',
+              'attributes' => [
+                    'picture' => [
+                      'class' => ['candidate-right-thumb'],
+                      'data-index' =>  $firstImage->id(),
+                      'data-gallery-thumb'
+                    ]
+                  ]
+            ]; ?>
+          <?php snippet('imagex-picture', $options) ?>
           <?php
             $images =  $page->galery()->toFiles();
             foreach($images as $image): 
@@ -118,13 +134,14 @@
         </a>
         <div class="candidate-right-images">
           <?php $options = [
-              'image' => $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
+              'image' => $firstImage,
               'srcset' => 'half',
               'ratio' => '24/31',
               'loading' => 'eager',
               'attributes' => [
                 'picture' => [
                   'class' => ['candidate-right-image'],
+                  'data-gallery-index' => $firstImage->id(),
                 ]
               ]
             ]; ?>

@@ -404,5 +404,5 @@ return [
     'sylvainjule.matomo.url'        => 'https://stats.tropheesducommerce.fr',
     'sylvainjule.matomo.id'         => '1',
     'sylvainjule.matomo.token'      => 'b1123ce2da29c533ccac8eb75a18270f',
-    'sylvainjule.matomo.active'     => true
+    'sylvainjule.matomo.active'     => true,
 ];

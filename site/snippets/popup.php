@@ -4,7 +4,7 @@
 ?>
 
 <div class="popup">
-    <div class="popup-overlay"></div>
+    <div class="popup-overlay" data-menu-button='close'></div>
 	<div class="popup-content">
 		<button class="popup-close" data-menu-button="close" data-lenis-resume>
 			<span>Fermer</span>

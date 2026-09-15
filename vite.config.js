@@ -20,7 +20,7 @@ export default ({ mode }) => ({
           if (/\.(woff2?|ttf|eot|otf)$/.test(name)) {
             return 'fonts/[name][extname]'
           }
-          return 'assets/[name][extname]'
+          return 'assets/[name].[hash][extname]'
         },
       },
     },

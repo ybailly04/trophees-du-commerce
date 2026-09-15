@@ -138,7 +138,7 @@ $categories = site()->find('categories')?->children() ?? [];
         <!-- Logo -->
         <div class="form-field full">
           <label for="logo">Logo <span aria-hidden="true" class="form-asterisk">*</span></label>
-          <div class="form-field-info">✓ PNG, SVG • 5 Mo maximum par fichier • Logo noir ou couleur</div>
+          <div class="form-field-info">✓ PNG, JPG • 5 Mo maximum par fichier • Logo noir ou couleur</div>
           <input type="file" class="bfi" id="logo" name="logo" accept="image/*" required>
         </div>
 
