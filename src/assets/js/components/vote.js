@@ -1,3 +1,42 @@
+let turnstileQueue = Promise.resolve();
+
+function getTurnstileToken() {
+  const result = turnstileQueue.then(() => requestTurnstileToken());
+  turnstileQueue = result.catch(() => {});
+  return result;
+}
+
+function requestTurnstileToken() {
+  return new Promise((resolve, reject) => {
+    if (typeof turnstile === "undefined" || window.__turnstileWidgetId == null) {
+      reject(new Error("Vérification anti-robot indisponible."));
+      return;
+    }
+
+    function cleanup() {
+      document.removeEventListener("turnstile:token", onToken);
+      document.removeEventListener("turnstile:error", onError);
+    }
+
+    function onToken(event) {
+      cleanup();
+      turnstile.reset(window.__turnstileWidgetId);
+      resolve(event.detail);
+    }
+
+    function onError() {
+      cleanup();
+      turnstile.reset(window.__turnstileWidgetId);
+      reject(new Error("Vérification anti-robot échouée."));
+    }
+
+    document.addEventListener("turnstile:token", onToken, { once: true });
+    document.addEventListener("turnstile:error", onError, { once: true });
+
+    turnstile.execute(window.__turnstileWidgetId);
+  });
+}
+
 export function initVoteButtons() {
   document.querySelectorAll("[data-vote-button]").forEach((button) => {
     button.addEventListener("click", async () => {
@@ -8,11 +47,16 @@ export function initVoteButtons() {
       const minSpinnerDelay = new Promise((resolve) => setTimeout(resolve, 3000));
 
       try {
+        const turnstileToken = await getTurnstileToken();
+
         const [response] = await Promise.all([
           fetch(button.getAttribute("data-vote-url"), {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({ _csrf: button.getAttribute("data-csrf") }),
+            body: new URLSearchParams({
+              _csrf: button.getAttribute("data-csrf"),
+              "cf-turnstile-response": turnstileToken,
+            }),
           }),
           minSpinnerDelay,
         ]);

@@ -7,7 +7,8 @@
       "Bash(xargs grep -l \"hook\\\\|hooks\")",
       "Bash(php -v)",
       "Bash(php -l \"d:/laragon/www/trophees-du-commerce/site/config/config.php\")",
-      "Bash(php -l \"d:/laragon/www/trophees-du-commerce/site/config/config.smtp.php\")"
+      "Bash(php -l \"d:/laragon/www/trophees-du-commerce/site/config/config.smtp.php\")",
+      "Bash(curl -s -b /tmp/claude-1000/-home-yann-Documents-D-projects-www-trophees-du-commerce/a7e37b6c-214b-45b2-b38d-37aea8b1ec0e/scratchpad/cookies.txt -w '\\\\nHTTP_STATUS:%{http_code}\\\\n' -X POST http://trophees-du-commerce.test/vote/candidates/le-chardon-d-ecosse --data-urlencode _csrf=wrong-token --data-urlencode cf-turnstile-response=whatever)"
     ]
   }
 }

@@ -1,6 +1,9 @@
 <?php
 
+use Kirby\Http\Remote;
+
 $smtp = include __DIR__ . '/config.smtp.php';
+$turnstile = include __DIR__ . '/config.turnstile.php';
 
 return [
     'debug'  => false,
@@ -8,12 +11,14 @@ return [
         'pages' => [
             'active' => true,
             'ignore' => ['formulaire-de-candidature']
-        ]
+            ]
+        ],
+    'turnstile' => [
+        'siteKey'   => $turnstile['siteKey'],
+        'secretKey' => $turnstile['secretKey'],
     ],
     'session' => [
-        // 2h d'inactivité au lieu des 30 min par défaut : le formulaire de
-        // candidature est long (photos, description...) et une session
-        // expirée invalidait silencieusement le jeton CSRF à la soumission.
+        // 2h d'inactivité
         'timeout' => 7200,
     ],
     'email'  => [
@@ -259,6 +264,24 @@ return [
             'action'  => function (string $id) {
                 if (!csrf(get('_csrf'))) {
                     return Response::json(['error' => 'Jeton de sécurité invalide.'], 403);
+                }
+
+                $turnstileToken = get('cf-turnstile-response');
+                if (!$turnstileToken) {
+                    return Response::json(['error' => 'Vérification anti-robot manquante.'], 403);
+                }
+
+                $turnstileVerify = Remote::post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                    'data' => [
+                        'secret'   => option('turnstile.secretKey'),
+                        'response' => $turnstileToken,
+                        'remoteip' => kirby()->visitor()->ip(),
+                    ],
+                ]);
+                $turnstileResult = json_decode($turnstileVerify->content(), true);
+
+                if (empty($turnstileResult['success'])) {
+                    return Response::json(['error' => 'Vérification anti-robot échouée.'], 403);
                 }
 
                 $dateVotes = site()->dateVotes()->toDate('U');

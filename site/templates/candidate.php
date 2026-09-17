@@ -91,7 +91,7 @@
       <div class="candidate-right">
         <div class="candidate-right-thumbs">
           <?php 
-          $firstImage = $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png');
+          $firstImage = $page->content()->get('image')->isNotEmpty() ? $page->content()->get('image')->toFile() : $site->image('placeholder.png');
           $options = [
               'image' => $firstImage,
               'srcset' => 'thumb',
@@ -172,7 +172,7 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                   <?php $options = [
-                      'image' => $page->content()->get('image') ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
+                      'image' => $page->content()->get('image')->isNotEmpty() ? $page->content()->get('image')->toFile() : $site->image('placeholder.png'),
                       'srcset' => 'half',
                       'ratio' => '24/31',
                       'loading' => 'eager',

@@ -184,8 +184,9 @@
         &-back{
             margin: 0 0 4em 0;
             padding: 0.6em 1em;
-            @media #{$md}, print {
-                display: none;
+
+            @media #{$sm}{
+                margin: 0 0 2em 0;
             }
         }
 

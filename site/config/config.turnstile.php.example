@@ -1,0 +1,10 @@
+<?php
+
+// Copier ce fichier en "config.turnstile.php" et renseigner les vraies clés
+// obtenues sur https://dash.cloudflare.com/?to=/:account/turnstile
+// config.turnstile.php est ignoré par git (voir .gitignore) pour ne jamais exposer la clé secrète.
+
+return [
+    'siteKey'   => 'changeme',
+    'secretKey' => 'changeme',
+];

@@ -54,6 +54,11 @@ Icon
 
 /site/config/config.smtp.php
 
+# Turnstile credentials
+# ---------------
+
+/site/config/config.turnstile.php
+
 ## Content
 /content/*
 /site/config/vite.config.php
