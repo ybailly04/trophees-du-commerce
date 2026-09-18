@@ -41,5 +41,6 @@ export class HeaderManager {
 
 	menuClose(){
 		html.classList.remove('__menu-active')
+		html.classList.remove('__popup-active')
 	}
 }

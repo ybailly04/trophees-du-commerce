@@ -1,3 +1,5 @@
+import { detectIncognito } from "detectincognitojs";
+
 let turnstileQueue = Promise.resolve();
 
 function getTurnstileToken() {
@@ -47,6 +49,17 @@ export function initVoteButtons() {
       const minSpinnerDelay = new Promise((resolve) => setTimeout(resolve, 3000));
 
       try {
+        //Detect incognito mode
+        const { isPrivate } = await detectIncognito();
+        if (isPrivate) {
+          const html = document.querySelector('html');
+          const popupText = document.querySelector('.popup-alert-text');
+
+          html.classList.add('__popup-active');
+          popupText.innerHTML = "Vous ne pouvez pas voter en navigation privée. <br/> Merci de changer de mode de navigation.";
+          throw new Error("Navigation privée détectée");
+        }
+
         const turnstileToken = await getTurnstileToken();
 
         const [response] = await Promise.all([
