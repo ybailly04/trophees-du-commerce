@@ -305,7 +305,6 @@
 		color: $bordeaux;
 		border-radius: 12px;
 		padding: 1em 1em 3em 1em;
-		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
@@ -325,7 +324,7 @@
 		}
 
 		.__popup-active &{
-			display: block;
+			display: flex;
 		}
 	}
 }

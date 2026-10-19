@@ -44,6 +44,9 @@ tabs:
                 multiple: false
               intro:
                 type: text
+              assets:
+                label: Fichiers externes
+                type: files
 
 
 

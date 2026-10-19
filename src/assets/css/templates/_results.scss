@@ -1,0 +1,125 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.results{
+    padding-top: 12em;
+    padding-bottom: 6em;
+    @include container;
+
+    &-header{
+        max-width: 50em;
+        margin: 0 auto 5em;
+        text-align: center;
+    }
+    &-title{
+        color: $color-main;
+        text-transform: uppercase;
+        margin: 0 0 .5em;
+        @media #{$md} {
+            font-size: 2em;
+        }
+    }
+    &-intro{
+        font-size: 1.2em;
+    }
+
+    &-categories{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media #{$sm} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-category{
+        background-color: $white;
+        border-radius: 12px;
+        padding: 1.5em;
+
+        &-title{
+            font-size: 1.3em;
+            color: $bordeaux;
+            text-transform: uppercase;
+            margin: 0 0 1em;
+
+            a{
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-listing{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    &-item{
+        display: grid;
+        grid-template-columns: 2.5em 4em 1fr auto;
+        align-items: center;
+        gap: 1em;
+    }
+
+    &-rank{
+        display: grid;
+        place-items: center;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        font-family: $font-secondary;
+        font-weight: 500;
+        background-color: $beige;
+        color: $bordeaux;
+
+        .results-item--1 &{
+            background-color: $color-main;
+            color: $beige;
+        }
+        .results-item--2 &{
+            background-color: $orange;
+            color: $beige;
+        }
+        .results-item--3 &{
+            background-color: $bordeaux-light;
+            color: $beige;
+        }
+    }
+
+    &-logo{
+        display: block;
+        width: 4em;
+        aspect-ratio: 1/1;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &-name{
+        color: $black;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    &-votes{
+        color: $bordeaux;
+        font-family: $font-secondary;
+        white-space: nowrap;
+    }
+
+    &-empty{
+        margin: 0;
+        color: $gray;
+    }
+}
